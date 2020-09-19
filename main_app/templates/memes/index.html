@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Memes</h1>
+
+{% for meme in memes %}
+  <div class="meme">
+      <p class="top">{{meme.top_text}}</p>
+      <img class="photo" src="{{meme.photo}}" alt="pic">
+      <p class="bottom">{{meme.bottom_text}}</p>
+  </div>
+{% endfor %}  
+
+{% endblock %}
