@@ -34,7 +34,7 @@ body {
 }
 
 .photo {
-    border: 5px solid white;
+    border: 5px solid beige;
     border-radius: 5px;
     grid-area: 1/1/4/6;
     z-index: -1;
