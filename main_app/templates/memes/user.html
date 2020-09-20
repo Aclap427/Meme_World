@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block content %}
-<h1>Memes</h1>
+<h1>My Memes</h1>
 <div class="container">
     {% for meme in memes %}
     <div class="box">
@@ -8,7 +8,8 @@
             <img class="photo" src="{{meme.photo}}" alt="pic" />
             <p class="bottom">{{meme.bottom_text}}</p>
         </div>
-        <p style="text-align: center;">Created By: <a href="">{{meme.user.username}}</a><br> on {{ meme.created_on }}</p>
+        <p style="text-align: center;">Created By: <a href="">{{meme.user.username}}</a><br> on {{ meme.created_on }}
+        </p>
     </div>
 
     {% endfor %} </div>
