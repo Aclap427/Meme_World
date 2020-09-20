@@ -3,11 +3,10 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import ListView
 from .models import Meme
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
 # Create your views here.
-
 
 def home(request):
   return render(request, 'home.html')
@@ -34,4 +33,15 @@ def signup(request):
 def user_view(request):
   memes = Meme.objects.filter(user=request.user)
   return render(request, 'memes/user.html', {'memes': memes})
+
+class MemeCreate(CreateView):
+  model = Meme
+  fields = ['photo_URL', 'top_text', 'bottom_text']
+  success_url = '/memes/'
+
+  def form_valid(self, form):
+    # Assign the logged in user (self.request.user)
+    form.instance.user = self.request.user
+    # Let the CreateView do its job as usual
+    return super().form_valid(form)
 
