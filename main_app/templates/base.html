@@ -4,7 +4,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/style.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <title>Meme World</title>
   </head>
   <body>
@@ -12,20 +20,75 @@
       <nav>
         <a href="/">Home</a>
         {% if user.is_authenticated %}
-          <a href="{% url 'index' %}">Memes</a>
-          <a href="{% url 'logout' %}">Log Out - {{user.username}}</a>
+        <a href="{% url 'index' %}">Memes</a>
+        <a href="{% url 'logout' %}">Log Out - {{user.username}}</a>
         {% else %}
-          <a href="{% url 'login' %}">Log In</a>
-          <a href="{% url 'signup' %}">Sign Up</a>
-        {% endif %}  
+        <a href="{% url 'login' %}">Log In</a>
+        <a href="{% url 'signup' %}">Sign Up</a>
+        {% endif %}
       </nav>
     </header>
-    <main>
-        {% block content %} 
-        {% endblock %} 
-    </main>
+    <main>{% block content %} {% endblock %}</main>
     <footer>
-      <p>We Rock</p>
+      <p>Website Developed By:</p>
+      <h4>
+        Amanda Claproth
+        <a
+          target="_blank"
+          href="https://www.linkedin.com/in/amanda-claproth-8b90501b1/ "
+        >
+          &nbsp;
+          <i
+            class="fa fa-linkedin-square"
+            style="font-size: 25px; color: rgb(0, 162, 255)"
+          ></i>
+        </a>
+        <a target="_blank" href="https://github.com/Aclap427">
+          &nbsp;
+          <i
+            class="fa fa-github"
+            style="font-size: 25px; color: rgb(0, 162, 255)"
+          >
+          </i>
+        </a>
+        <a href="mailto:amanda.claproth@gmail.com">
+          &nbsp;
+          <i
+            class="fa fa-envelope"
+            style="font-size: 25px; color: rgb(0, 162, 255)"
+          >
+          </i>
+        </a>
+      </h4>
+      <h4>
+        Charles MacMillan
+        <a
+          target="_blank"
+          href="https://www.linkedin.com/in/charles-macmillan/"
+        >
+          &nbsp;
+          <i
+            class="fa fa-linkedin-square"
+            style="font-size: 25px; color: rgb(0, 162, 255)"
+          ></i>
+        </a>
+        <a target="_blank" href="https://github.com/charlesmacmillan">
+          &nbsp;
+          <i
+            class="fa fa-github"
+            style="font-size: 25px; color: rgb(0, 162, 255)"
+          >
+          </i>
+        </a>
+        <a href="mailto:charlesmacmillanpro@gmail.com">
+          &nbsp;
+          <i
+            class="fa fa-envelope"
+            style="font-size: 25px; color: rgb(0, 162, 255)"
+          >
+          </i>
+        </a>
+      </h4>
     </footer>
   </body>
 </html>
