@@ -15,5 +15,4 @@ class Meme(models.Model):
     def __str__(self):
         return self.top_text
 
-    #def get_absolute_url(self):
-        #return reverse('user', kwargs={'meme_id': self.id})
+ 

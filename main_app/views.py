@@ -40,8 +40,6 @@ class MemeCreate(CreateView):
   success_url = '/memes/'
 
   def form_valid(self, form):
-    # Assign the logged in user (self.request.user)
     form.instance.user = self.request.user
-    # Let the CreateView do its job as usual
     return super().form_valid(form)
 

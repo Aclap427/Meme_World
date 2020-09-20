@@ -103,6 +103,31 @@ a:hover {
     grid-area: 3/1/4/6;
 }
 
+form {
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 10px;
+    color: rgb(219, 213, 213);
+}
+
+.btn {
+    width: 35px;
+    height: 35px;
+    margin-left: 8px;
+    color: rgb(247, 242, 242);
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    background-color: rgb(51, 182, 51);
+}
+
+.btn:hover {
+    background-color: rgb(144, 238, 149);
+}
+
 footer {
     margin-top: 60px;
     flex-shrink: 0;
