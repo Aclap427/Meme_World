@@ -34,6 +34,11 @@ def user_view(request):
   memes = Meme.objects.filter(user=request.user)
   return render(request, 'memes/user.html', {'memes': memes})
 
+def user_id(request, user_id):
+  memes = Meme.objects.filter(user=user_id)
+  return render(request, 'memes/user.html', {'memes': memes})
+
+
 class MemeCreate(CreateView):
   model = Meme
   fields = ['photo_URL', 'top_text', 'bottom_text']
@@ -43,10 +48,16 @@ class MemeCreate(CreateView):
     form.instance.user = self.request.user
     return super().form_valid(form)
 
-class MemeUpdate(UpdateView):
+class MemeUpdate(LoginRequiredMixin, UpdateView):
   model = Meme
   fields = ['top_text', 'bottom_text']
   success_url = '/memes/user/'
+
+  def form_valid(self,form):
+    if form.instance.user == self.request.user:
+      return super().form_valid(form)
+    else:
+      return redirect('/memes/user/')
 
 class MemeDelete(DeleteView):
   model = Meme

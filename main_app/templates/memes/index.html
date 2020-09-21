@@ -1,29 +1,27 @@
 {% extends 'base.html' %} {% block content %}
 <h1>Memes</h1>
 <div class="container">
-  {% for meme in memes %}
-  <div class="box">
-    <div class="meme">
-      {% if meme.top_text|length > 10 %}
-      <p class="top long-string">{{meme.top_text}}</p>
-      {% else %}
-      <p class="top short-string">{{meme.top_text}}</p>
-      {% endif %}
-      <img class="photo" src="{{meme.photo_URL}}" alt="pic" />
-      {% if meme.top_text|length > 10 %}
-      <p class="bottom long-string">{{meme.bottom_text}}</p>
-      {% else %}
-      <p class="bottom short-string">{{meme.bottom_text}}</p>
-      {% endif %}
+    {% for meme in memes %}
+    <div class="box">
+        <div class="meme">
+            {% if meme.top_text|length > 10 %}
+            <p class="top long-string">{{meme.top_text}}</p>
+            {% else %}
+            <p class="top short-string">{{meme.top_text}}</p>
+            {% endif %}
+            <img class="photo" src="{{meme.photo_URL}}" alt="pic" /> {% if meme.top_text|length > 10 %}
+            <p class="bottom long-string">{{meme.bottom_text}}</p>
+            {% else %}
+            <p class="bottom short-string">{{meme.bottom_text}}</p>
+            {% endif %}
+        </div>
+        <div class="gray-box" style="margin: 10px 0 10px 10px;">
+            <p>
+                Created By: <a href="/memes/user/{{meme.user.id}}">{{meme.user.username}}</a><br /> on {{ meme.created_on }}
+            </p>
+        </div>
     </div>
-    <div class="gray-box" style="margin: 10px 0 10px 10px;">
-      <p>
-        Created By: <a href="">{{meme.user.username}}</a><br />
-        on {{ meme.created_on }}
-      </p>
-    </div>
-  </div>
 
-  {% endfor %}
+    {% endfor %}
 </div>
 {% endblock %}
