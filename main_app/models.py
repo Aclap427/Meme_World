@@ -6,8 +6,8 @@ from datetime import date
 class Meme(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     photo_URL = models.CharField(max_length=200, null=True)
-    top_text = models.CharField(max_length=100, null=True)
-    bottom_text = models.CharField(max_length=100, null=True)
+    top_text = models.CharField(max_length=100, blank=True)
+    bottom_text = models.CharField(max_length=100, blank=True)
     created_on = models.DateField(default=date.today)
     
     
