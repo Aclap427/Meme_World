@@ -41,7 +41,7 @@ def user_id(request, user_id):
 
 class MemeCreate(CreateView):
   model = Meme
-  fields = ['photo_URL', 'top_text', 'bottom_text', 'text_color']
+  fields = ['photo_URL', 'top_text', 'bottom_text', 'text_color', 'font']
   success_url = '/memes/'
 
   def form_valid(self, form):
@@ -50,7 +50,7 @@ class MemeCreate(CreateView):
 
 class MemeUpdate(LoginRequiredMixin, UpdateView):
   model = Meme
-  fields = ['top_text', 'bottom_text', 'text_color']
+  fields = ['top_text', 'bottom_text', 'text_color', 'font']
   success_url = '/memes/user/'
 
   def form_valid(self,form):

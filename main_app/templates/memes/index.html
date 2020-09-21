@@ -5,14 +5,14 @@
     <div class="box">
         <div class="meme">
             {% if meme.top_text|length == 0 %} {% elif meme.top_text|length > 10 %}
-            <p style="color: {{meme.text_color}};" class="top long-string">{{meme.top_text}}</p>
+        <p style="color: {{meme.text_color}}; font-family: {{meme.font}};" class="top long-string">{{meme.top_text}}</p>
             {% else %}
-            <p style="color: {{ meme.get_text_color_display }};" class="top short-string">{{meme.top_text}}</p>
+            <p style="color: {{meme.text_color}}; font-family: {{meme.font}};" class="top short-string">{{meme.top_text}}</p>
             {% endif %}
             <img class="photo" src="{{meme.photo_URL}}" alt="pic" /> {% if meme.bottom_text|length == 0 %} {% elif meme.bottom_text|length > 10 %}
-            <p style="color: {{ meme.get_text_color_display }};" class="bottom long-string">{{meme.bottom_text}}</p>
+            <p style="color: {{meme.text_color}}; font-family: {{meme.font}};" class="bottom long-string">{{meme.bottom_text}}</p>
             {% else %}
-            <p style="color: {{ meme.get_text_color_display }};" class="bottom short-string">{{meme.bottom_text}}</p>
+            <p style="color: {{meme.text_color}}; font-family: {{meme.font}};" class="bottom short-string">{{meme.bottom_text}}</p>
             {% endif %}
         </div>
         <div class="gray-box" style="margin: 10px 0 10px 10px;">

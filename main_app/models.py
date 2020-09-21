@@ -11,7 +11,8 @@ COLORS = (
 )
 
 FONTS = (
-
+    ("Comic Neue", "Comic Neue"),
+    ("Just Another Hand", "Just Another Hand")
 )
 
 
@@ -25,6 +26,11 @@ class Meme(models.Model):
         max_length=5,
         choices=COLORS,
         default=COLORS[0][0]
+    )
+    font = models.CharField(
+        max_length=100,
+        choices=FONTS,
+        default=FONTS[0][0]
     )
     
     
