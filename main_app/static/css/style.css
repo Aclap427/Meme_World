@@ -1,184 +1,179 @@
 @import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Kufam:wght@500&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap");
 body {
-    margin: 0;
-    background-color: rgb(33, 69, 110);
-    font-family: "Kufam", cursive;
+  text-align: center;
+  margin: 0;
+  background-color: rgb(33, 69, 110);
+  font-family: "Kufam", cursive;
 }
 
 header {
-    display: flex;
-    flex-direction: column;
-    height: 100px;
-    background-color: black;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  background-color: black;
+  justify-content: center;
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-h1 {
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 nav {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
 nav a {
-    font-size: 25px;
+  font-size: 25px;
 }
 
 a {
-    color: rgb(33, 69, 110);
+  color: rgb(33, 69, 110);
 }
 
 a:hover {
-    color: rgb(196, 96, 96);
+  color: rgb(196, 96, 96);
 }
 
 .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: rgb(255, 255, 255);
-    padding: 10px 10px 0 0;
-    border-radius: 5px;
-    margin: 5px;
-    font-family: 'Just Another Hand', cursive;
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  padding: 10px 10px 0 0;
+  border-radius: 5px;
+  margin: 5px;
+  font-family: "Just Another Hand", cursive;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 
 .meme {
-    padding: 0 5px;
-    margin: 10px;
-    width: 300px;
-    height: 300px;
-    display: grid;
-    grid-template: 1fr 3fr 1fr / 1fr 1fr 1fr 1fr 1fr;
+  padding: 0 5px;
+  margin: 10px;
+  width: 300px;
+  height: 300px;
+  display: grid;
+  grid-template: 1fr 3fr 1fr / 1fr 1fr 1fr 1fr 1fr;
 }
 
 .top,
 .bottom {
-    display: flex;
-    font-family: "Comic Neue", cursive;
-    background-color: white;
-    border-radius: 5px;
-    margin: 5%;
-    text-align: center;
-    padding: 0 5px;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-    line-height: 20px;
+  display: flex;
+  font-family: "Comic Neue", cursive;
+  background-color: white;
+  border-radius: 5px;
+  margin: 5%;
+  text-align: center;
+  padding: 0 5px;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  line-height: 20px;
 }
 
 .long-string {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .short-string {
-    font-size: 25px;
+  font-size: 25px;
 }
 
 .top {
-    grid-area: 1/1/2/6;
+  grid-area: 1/1/2/6;
 }
 
 .photo {
-    border: 5px solid black;
-    border-radius: 5px;
-    grid-area: 1/1/4/6;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
+  border: 5px solid black;
+  border-radius: 5px;
+  grid-area: 1/1/4/6;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
 }
 
 .bottom {
-    grid-area: 3/1/4/6;
+  grid-area: 3/1/4/6;
 }
 
-form {
-    margin-top: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
-    padding: 10px;
-    color: rgb(219, 213, 213);
+.gray-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  color: rgb(219, 213, 213);
 }
 
 .btn {
-    width: 35px;
-    height: 35px;
-    margin: 0 8px;
-    border: none;
-    border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  margin: 0 8px;
+  border: none;
+  border-radius: 50%;
 }
 
 .submit {
-    background-image: url('https://lh3.googleusercontent.com/proxy/ZwpUL87gS86A6HKGz8CnIkpKPT3-nIxmpT7B7e5JE9U1ryfukzbaGuzQBr2Qe2uOiZg4AlYxSrbGUH69Zz1-Rby0AhD4lsQ');
-    background-size: 95%;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-image: url("https://lh3.googleusercontent.com/proxy/ZwpUL87gS86A6HKGz8CnIkpKPT3-nIxmpT7B7e5JE9U1ryfukzbaGuzQBr2Qe2uOiZg4AlYxSrbGUH69Zz1-Rby0AhD4lsQ");
+  background-size: 95%;
+  background-position: right;
+  background-repeat: no-repeat;
 }
 
 .cancel {
-    background-image: url('https://www.iconfinder.com/data/icons/material-design-9/48/6-512.png');
-    background-size: contain;
-    border: 2px solid white;
+  background-image: url("https://www.iconfinder.com/data/icons/material-design-9/48/6-512.png");
+  background-size: contain;
+  border: 2px solid white;
 }
 
 .delete {
-    background-image: url('https://media.istockphoto.com/vectors/bin-icon-flat-red-round-button-vector-illustration-vector-id1162428585?k=6&m=1162428585&s=612x612&w=0&h=wpxkoulockcgBSplnPJs6rHizOkW0BL7Sb-FL8n59-o=');
-    background-size: contain;
+  background-image: url("https://media.istockphoto.com/vectors/bin-icon-flat-red-round-button-vector-illustration-vector-id1162428585?k=6&m=1162428585&s=612x612&w=0&h=wpxkoulockcgBSplnPJs6rHizOkW0BL7Sb-FL8n59-o=");
+  background-size: contain;
 }
 
 .submit:hover {
-    border: 2px solid rgb(0, 168, 0);
+  border: 2px solid rgb(0, 168, 0);
 }
 
 .cancel:hover {
-    border: 2px solid rgb(85, 85, 141);
-    background-size: 95%;
-    background-repeat: no-repeat;
-    background-position: center;
+  border: 2px solid rgb(85, 85, 141);
+  background-size: 95%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .delete:hover {
-    border: 2px solid red;
-} 
+  border: 2px solid red;
+}
 
 footer {
-    margin-top: 60px;
-    flex-shrink: 0;
-    text-align: center;
+  margin-top: 60px;
+  flex-shrink: 0;
+  text-align: center;
 }
 
 @media only screen and (max-width: 1095px) {
-    .meme {
-        height: 250px;
-        width: 250px;
-    }
+  .meme {
+    height: 250px;
+    width: 250px;
+  }
 }
 
 @media only screen and (max-width: 750px) {
-    header a {
-        font-size: 15px;
-    }
+  header a {
+    font-size: 15px;
+  }
 }
