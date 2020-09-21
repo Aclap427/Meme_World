@@ -62,3 +62,8 @@ class MemeUpdate(LoginRequiredMixin, UpdateView):
 class MemeDelete(DeleteView):
   model = Meme
   success_url = '/memes/'
+
+  def form_valid(self,form):
+    if form.instance.user != self.request.user:
+      return redirect('/memes/')
+  
