@@ -13,7 +13,8 @@
 <body>
     <header>
         <nav>
-            <a href="/">Home</a> {% if user.is_authenticated %}
+            <a href="/">Home</a> 
+            {% if user.is_authenticated %}
             <a href="{% url 'index' %}">Memes</a>
             <a href="{% url 'memes_create' %}">Create a Meme</a>
             <a href="{% url 'user' %}">My Memes</a>
