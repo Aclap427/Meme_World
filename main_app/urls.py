@@ -7,4 +7,6 @@ urlpatterns = [
     path('accounts/signup/', views.signup, name='signup'),
     path('memes/user/', views.user_view, name='user'),
     path('memes/create/', views.MemeCreate.as_view(), name='memes_create'),
+    path('memes/<int:pk>/update', views.MemeUpdate.as_view(), name='memes_update'),
+    path('memes/<int:pk>/delete', views.MemeDelete.as_view(), name='memes_delete'),
 ]

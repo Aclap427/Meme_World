@@ -43,3 +43,11 @@ class MemeCreate(CreateView):
     form.instance.user = self.request.user
     return super().form_valid(form)
 
+class MemeUpdate(UpdateView):
+  model = Meme
+  fields = ['top_text', 'bottom_text']
+  success_url = '/memes/user/'
+
+class MemeDelete(DeleteView):
+  model = Meme
+  success_url = '/memes/'

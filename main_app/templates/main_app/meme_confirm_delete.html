@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block content %}
+<h1></h1>
+<div class="box" style="padding-bottom: 10px">
+  <div class="meme">
+    {% if meme.top_text|length > 10 %}
+    <p class="top long-string">{{meme.top_text}}</p>
+    {% else %}
+    <p class="top short-string">{{meme.top_text}}</p>
+    {% endif %}
+    <img class="photo" src="{{meme.photo_URL}}" alt="pic" />
+    {% if meme.top_text|length > 10 %}
+    <p class="bottom long-string">{{meme.bottom_text}}</p>
+    {% else %}
+    <p class="bottom short-string">{{meme.bottom_text}}</p>
+    {% endif %}
+</div>
+<p style="text-align: center; margin: 10px 0 0 10px;">Delete Meme?</p>
+<form style="margin: 0 0 0 10px" action="" method="POST">
+  {% csrf_token %}
+  <button href="{% url 'user' %}" class="cancel btn"></button>
+  <input type="submit" value="" class="delete btn" />
+</form>
+</div>
+{% endblock %}
