@@ -13,7 +13,7 @@
         <p class="bottom long-string">{{meme.bottom_text}}</p>
         {% else %}
         <p class="bottom short-string">{{meme.bottom_text}}</p>
-    </div>
+        {% endif %}</div>
     <p style="margin: 5px;"></p>
     <form class="gray-box" style="margin: 0 0 0 10px; padding: 10px;" action="" method="POST">
         {% csrf_token %}
