@@ -18,7 +18,7 @@ FONTS = (
 
 class Meme(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    photo_URL = models.CharField(max_length=200, null=True)
+    photo_URL = models.CharField(max_length=200, blank=True, null=True)
     top_text = models.CharField(max_length=100, blank=True, null=True)
     bottom_text = models.CharField(max_length=100, blank=True, null=True)
     created_on = models.DateField(default=date.today)
@@ -38,10 +38,10 @@ class Meme(models.Model):
     def __str__(self):
         return self.top_text
 
-class Photo(models.Model):
-    url = models.CharField(max_length=200)
-    meme = models.ForeignKey(Meme, on_delete=models.CASCADE)
+# class Photo(models.Model):
+#     url = models.CharField(max_length=200)
+#     meme = models.ForeignKey(Meme, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return f"Photo for meme_id: {self.meme_id} @{self.url}"
+#     def __str__(self):
+#         return f"Photo for meme_id: {self.meme_id} @{self.url}"
 

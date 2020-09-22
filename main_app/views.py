@@ -4,16 +4,17 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Meme, Photo
+from .models import Meme#Photo
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
-import uuid
-import boto3
+# import uuid
+# import boto3
 
-S3_BASE_URL = 'https://s3.us-west-1.amazonaws.com/'
-BUCKET = 'memeworld'
+# S3_BASE_URL = 'https://s3.us-west-1.amazonaws.com/'
+# BUCKET = 'memeworld'
 
 
 # Create your views here.
+
 
 def home(request):
   return render(request, 'home.html')
@@ -55,6 +56,19 @@ class MemeCreate(CreateView):
     form.instance.user = self.request.user
     return super().form_valid(form)
 
+  # def add_photo(request, meme_id):
+  #   photo_file = request.FILES.get('photo-file', None)
+  #   if photo_file:
+  #       s3 = boto3.client('s3')
+  #       key = uuid.uuid4().hex[:6] + photo_file.name[photo_file.name.rfind('.'):]
+  #       try:
+  #           s3.upload_fileobj(photo_file, BUCKET, key)
+  #           url = f"{S3_BASE_URL}{BUCKET}/{key}"
+  #           Photo.objects.create(url=url, meme_id=meme_id)
+  #       except:
+  #           print('An error occurred uploading file to S3')
+  #   return redirect('user', meme_id=meme_id)
+
 class MemeUpdate(LoginRequiredMixin, UpdateView):
   model = Meme
   fields = ['top_text', 'bottom_text', 'text_color', 'font']
@@ -70,16 +84,5 @@ class MemeDelete(DeleteView):
   model = Meme
   success_url = '/memes/user/'
 
-  def add_photo(request, meme_id):
-    photo_file = request.FILES.get('photo-file', None)
-    if photo_file:
-        s3 = boto3.client('s3')
-        key = uuid.uuid4().hex[:6] + photo_file.name[photo_file.name.rfind('.'):]
-        try:
-            s3.upload_fileobj(photo_file, BUCKET, key)
-            url = f"{S3_BASE_URL}{BUCKET}/{key}"
-            Photo.objects.create(url=url, meme_id=meme_id)
-        except:
-            print('An error occurred uploading file to S3')
-    return redirect('detail', meme_id=meme_id)
+
   

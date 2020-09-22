@@ -2,18 +2,18 @@
 <h1></h1>
 <div class="box" style="padding-bottom: 10px">
     <h1 style="margin: 10px 0 0;">Delete Meme?</h1>
-    <div class="meme" style="margin: 0 auto;">
+    <div class="meme">
         {% if meme.top_text|length > 10 %}
         <p class="top long-string">{{meme.top_text}}</p>
         {% else %}
         <p class="top short-string">{{meme.top_text}}</p>
-        {% endif %} {% if meme.photo_set.all|length > 0 %}
-        <img class="photo" src="{{ photo.url }}"> {% else %}
-        <img class="photo" src="{{meme.photo_URL}}" alt="pic" /> {% endif %}{% if meme.top_text|length > 10 %}
+        {% endif %}
+        <img class="photo" src="{{meme.photo_URL}}" alt="pic" /> {% if meme.top_text|length > 10 %}
         <p class="bottom long-string">{{meme.bottom_text}}</p>
         {% else %}
         <p class="bottom short-string">{{meme.bottom_text}}</p>
-        {% endif %}</div>
+        {% endif %}
+    </div>
     <p style="margin: 5px;"></p>
     <form class="gray-box" style="margin: 0 0 0 10px; padding: 10px;" action="" method="POST">
         {% csrf_token %}

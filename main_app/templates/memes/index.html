@@ -3,24 +3,27 @@
 <div class="container">
     {% for meme in memes %}
     <div class="box">
-        <div class="meme" style="margin: 0 auto;">
-            {% if meme.top_text|length > 10 %}
-            <p class="top long-string">{{meme.top_text}}</p>
+        <div class="meme">
+            {% if meme.top_text|length == 0 %} {% elif meme.top_text|length > 10 %}
+            <p style="color: {{meme.text_color}}; font-family: {{meme.font}};" class="top long-string">{{meme.top_text}}</p>
             {% else %}
-            <p class="top short-string">{{meme.top_text}}</p>
-            {% endif %} {% if meme.photo_set.all|length > 0 %}
-            <img class="photo" src="{{ photo.url }}"> {% else %}
-            <img class="photo" src="{{meme.photo_URL}}" alt="pic" /> {% endif %}{% if meme.top_text|length > 10 %}
-            <p class="bottom long-string">{{meme.bottom_text}}</p>
+            <p style="color: {{meme.text_color}}; font-family: {{meme.font}};" class="top short-string">{{meme.top_text}}</p>
+            {% endif %}
+            <img class="photo" src="{{meme.photo_URL}}" alt="pic" /> {% if meme.bottom_text|length == 0 %} {% elif meme.bottom_text|length > 10 %}
+            <p style="color: {{meme.text_color}}; font-family: {{meme.font}};" class="bottom long-string">{{meme.bottom_text}}
+            </p>
             {% else %}
-            <p class="bottom short-string">{{meme.bottom_text}}</p>
-            {% endif %}</div>
-        <div class="gray-box" style="margin: 20px 0 10px 10px;">
+            <p style="color: {{meme.text_color}}; font-family: {{meme.font}};" class="bottom short-string">
+                {{meme.bottom_text}}</p>
+            {% endif %}
+        </div>
+        <div class="gray-box" style="margin: 10px 0 10px 10px;">
             <p>
                 Created By: <a href="/memes/user/{{meme.user.id}}">{{meme.user.username}}</a><br /> on {{ meme.created_on }}
             </p>
         </div>
     </div>
+
     {% endfor %}
 </div>
 {% endblock %}
