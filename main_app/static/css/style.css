@@ -148,22 +148,22 @@ a:hover {
 }
 
 .delete-btn {
-  background-image: url("https://media.istockphoto.com/vectors/bin-icon-flat-red-round-button-vector-illustration-vector-id1162428585?k=6&m=1162428585&s=612x612&w=0&h=wpxkoulockcgBSplnPJs6rHizOkW0BL7Sb-FL8n59-o=");
+  background-image: url("https://i.imgur.com/C4aASTz.jpg");
   background-size: contain;
 }
 
-.submit:hover {
+.submit-btn:hover {
   border: 2px solid rgb(0, 168, 0);
 }
 
-.cancel:hover {
+.cancel-btn:hover {
   border: 2px solid rgb(85, 85, 141);
   background-size: 95%;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.delete:hover {
+.delete-btn:hover {
   border: 2px solid red;
 }
 
