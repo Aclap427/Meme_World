@@ -38,3 +38,10 @@ class Meme(models.Model):
     def __str__(self):
         return self.top_text
 
+class Photo(models.Model):
+    url = models.CharField(max_length=200)
+    meme = models.ForeignKey(Meme, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"Photo for meme_id: {self.meme_id} @{self.url}"
+
