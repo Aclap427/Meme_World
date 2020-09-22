@@ -167,6 +167,15 @@ a:hover {
   border: 2px solid red;
 }
 
+#id_font,
+#id_text_color {
+  width: 153px;
+}
+
+th {
+  margin: 0 auto;
+}
+
 footer {
   margin-top: 60px;
   flex-shrink: 0;

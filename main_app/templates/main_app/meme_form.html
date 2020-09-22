@@ -1,43 +1,52 @@
 {% extends 'base.html' %} {% block content %}
 <h1></h1>
-<div class="box" style="padding-bottom: 10px;">
+<div class="box">
     {% if object %}
     <h1 style="margin: 10px 0 0;">Edit Meme</h1>
-    <div class="meme" style="margin: 0 auto;">
-        {% if meme.top_text|length > 10 %}
-        <p class="top long-string">{{meme.top_text}}</p>
-        {% else %}
-        <p class="top short-string">{{meme.top_text}}</p>
-        {% endif %} {% if meme.photo_set.all|length > 0 %}
-        <img class="photo" src="{{ photo.url }}"> {% else %}
-        <img class="photo" src="{{meme.photo_URL}}" alt="pic" /> {% endif %}{% if meme.top_text|length > 10 %}
-        <p class="bottom long-string">{{meme.bottom_text}}</p>
-        {% else %}
-        <p class="bottom short-string">{{meme.bottom_text}}</p>
-    </div>
+        <div class="meme" style="height: 320px; width: 320px;margin: 0 auto;">
+            {% if meme.top_text == None %}
+            
+            {% elif meme.top_text|length > 10 %}
+            <p class="top long-string">{{meme.top_text}}</p>
+            {% else %}
+            <p class="top short-string">{{meme.top_text}}</p>
+            {% endif %}
+            <img class="photo" src="{{meme.photo_URL}}" alt="pic" />
+            {% if meme.top_text == None %}
+            {% elif meme.top_text|length > 10 %}
+            <p class="bottom long-string">{{meme.bottom_text}}</p>
+            {% else %}
+            <p class="bottom short-string">{{meme.bottom_text}}</p>
+            {% endif %}
+            </div>
     <p style="margin: 10px;"></p>
-    {% endif %} {% else %}
+     {% else %}
     <h1 style="margin: 10px 0 0 10px;">New Meme</h1>
     {% endif %}
 </div>
-<form class="gray-box" style="padding: 10px; margin: 20px 0;" action="" method="post">
+<div></div>
+<form class="gray-box" enctype="multipart/form-data" style="padding: 10px;" action="" method="post">
     {% csrf_token %}
-    <table>
-        {{ form.as_table }}
 
+      <table>
+    {% if object %}
+    {% else %}
+    <tr>
+      <thead>
+      <th style="margin-left: 45px;">Upload Photo: </th>
+      <td >
+        <input style=" width: 153px;" type="file" name="photo-file">
+      </td>
+    </tr>
+    <tr>
+
+      <th>-or-</th>
+    </tr>
+    {% endif %}
+      {{ form.as_table }}
     </table>
+
     <input type="submit" value="" class="submit-btn" />
 </form>
 
-<form action="{% url 'add_photo' %}" enctype="multipart/form-data" method="POST" class="card-panel">
-    {% csrf_token %}
-    <table>
-        {{ form.as_table }}
-
-        <input type="file" name="photo-file">
-        <br><br>
-        <input type="submit" value="" class="submit-btn" />
-
-    </table>
-</form>
 {% endblock %}

@@ -4,7 +4,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Meme#Photo
+from .models import Meme
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 import uuid
 import boto3
@@ -54,26 +54,21 @@ class MemeCreate(CreateView):
 
   def form_valid(self, form):
     form.instance.user = self.request.user
-    return super().form_valid(form)
-
-def add_photo(request):
-    print('here it is')# photo-file will be the "name" attribute on the <input type="file">
-    photo_file = request.FILES.get('photo-file', None)
+    photo_file = self.request.FILES.get('photo-file', None)
     if photo_file:
         s3 = boto3.client('s3')
         # need a unique "key" for S3 / needs image file extension too
-        key = uuid.uuid4().hex[:6] + photo_file.name[photo_file.name.rfind('.'):]
+        key = uuid.uuid4().hex[:6] + \
+            photo_file.name[photo_file.name.rfind('.'):]
         # just in case something goes wrong
         try:
             s3.upload_fileobj(photo_file, BUCKET, key)
             # build the full url string
             url = f"{S3_BASE_URL}{BUCKET}/{key}"
-            print(url)
-            # we can assign to cat_id or cat (if you have a cat object)
-            Meme.objects.create(photo_URL=url, user=request.user)
+            form.instance.photo_URL = url
         except:
             print('An error occurred uploading file to S3')
-    return redirect('/memes/')
+    return super().form_valid(form)
 
 class MemeUpdate(LoginRequiredMixin, UpdateView):
   model = Meme
