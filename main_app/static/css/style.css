@@ -188,7 +188,8 @@ footer {
   margin-top: 60px;
   flex-shrink: 0;
   text-align: center;
-  background: linear-gradient()
+  height: 200px;
+  /* background: linear-gradient(to top, white 0%, rgba(0, 0, 0, 0)); */
 }
 
 @media only screen and (max-width: 1095px) {
