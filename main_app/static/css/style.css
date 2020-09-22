@@ -139,12 +139,15 @@ a:hover {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  margin-right: 0;
 }
 
 .cancel-btn {
   background-image: url("https://i.imgur.com/SvYNhBO.png");
   background-size: contain;
   border: 2px solid white;
+  width: 32px;
+  height: 32px;
 }
 
 .delete-btn {
@@ -157,8 +160,9 @@ a:hover {
 }
 
 .cancel-btn:hover {
-  border: 2px solid rgb(85, 85, 141);
-  background-size: 95%;
+  border: 2.5px solid rgb(85, 85, 141);
+  height: 31px;
+  width: 31px;
   background-repeat: no-repeat;
   background-position: center;
 }
