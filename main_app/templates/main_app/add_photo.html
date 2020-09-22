@@ -1,0 +1,10 @@
+<form class="gray-box" style="padding: 10px; margin: 20px 0;" action="{% url 'add_photo' %}" enctype="multipart/form-data" method="post ">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+        <input type="file " name="photo-file ">
+        <br><br>
+        <input type="submit " class="btn " value="Upload Photo ">
+    </table>
+    <input type="submit " value=" " class="submit-btn " />
+</form>

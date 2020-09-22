@@ -8,8 +8,9 @@
         <p class="top long-string">{{meme.top_text}}</p>
         {% else %}
         <p class="top short-string">{{meme.top_text}}</p>
-        {% endif %}
-        <img class="photo" src="{{meme.photo_URL}}" alt="pic" /> {% if meme.top_text|length > 10 %}
+        {% endif %} {% if meme.photo_set.all|length > 0 %}
+        <img class="photo" src="{{ photo.url }}"> {% else %}
+        <img class="photo" src="{{meme.photo_URL}}" alt="pic" /> {% endif %}{% if meme.top_text|length > 10 %}
         <p class="bottom long-string">{{meme.bottom_text}}</p>
         {% else %}
         <p class="bottom short-string">{{meme.bottom_text}}</p>
@@ -19,11 +20,17 @@
     <h1 style="margin: 10px 0 0 10px;">New Meme</h1>
     {% endif %}
 </div>
-<form class="gray-box" style="padding: 10px; margin: 20px 0;" action="" method="post">
+
+
+<form class="gray-box" action="{% url 'add_photo' %}" enctype="multipart/form-data" method="POST" class="card-panel">
     {% csrf_token %}
     <table>
         {{ form.as_table }}
+
+        <input type="file" name="photo-file">
+        <br><br>
+        <input type="submit" value="" class="submit-btn" />
+
     </table>
-    <input type="submit" value="" class="submit-btn" />
 </form>
 {% endblock %}
