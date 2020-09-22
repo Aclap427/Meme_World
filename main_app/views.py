@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+# from django.http import Http404
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -63,7 +64,7 @@ class MemeDelete(DeleteView):
   model = Meme
   success_url = '/memes/user/'
 
-  def form_valid(self,form):
-    if form.instance.user != self.request.user:
-      return redirect('/memes/')
+  # def form_valid(self,form):
+  #   if form.instance.user != self.request.user:
+  #     return redirect('/memes/')
   

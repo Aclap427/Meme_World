@@ -37,6 +37,10 @@ a {
   color: rgb(33, 69, 110);
 }
 
+p {
+    margin: 0 auto;
+}
+
 a:hover {
   color: rgb(196, 96, 96);
 }
@@ -120,28 +124,30 @@ a:hover {
   color: rgb(219, 213, 213);
 }
 
-.btn {
+.submit-btn,
+.cancel-btn,
+.delete-btn {
   width: 35px;
   height: 35px;
-  margin: 0 8px;
+  margin: 0 10px;
   border: none;
   border-radius: 50%;
 }
 
-.submit {
+.submit-btn {
   background-image: url("https://lh3.googleusercontent.com/proxy/ZwpUL87gS86A6HKGz8CnIkpKPT3-nIxmpT7B7e5JE9U1ryfukzbaGuzQBr2Qe2uOiZg4AlYxSrbGUH69Zz1-Rby0AhD4lsQ");
   background-size: 95%;
   background-position: right;
   background-repeat: no-repeat;
 }
 
-.cancel {
+.cancel-btn {
   background-image: url("https://www.iconfinder.com/data/icons/material-design-9/48/6-512.png");
   background-size: contain;
   border: 2px solid white;
 }
 
-.delete {
+.delete-btn {
   background-image: url("https://media.istockphoto.com/vectors/bin-icon-flat-red-round-button-vector-illustration-vector-id1162428585?k=6&m=1162428585&s=612x612&w=0&h=wpxkoulockcgBSplnPJs6rHizOkW0BL7Sb-FL8n59-o=");
   background-size: contain;
 }

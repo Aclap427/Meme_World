@@ -18,8 +18,8 @@
 <p style="margin: 5px;"></p>
 <form class="gray-box" style="margin: 0 0 0 10px; padding: 10px;" action="" method="POST">
   {% csrf_token %}
-  <button href="{% url 'user' %}" class="cancel btn"></button>
-  <input type="submit" value="" class="delete btn" />
+  <a href="{% url 'user' %}" class="cancel-btn"></a>
+  <input type="submit" value="" class="delete-btn" />
 </form>
 </div>
 {% endblock %}
