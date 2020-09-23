@@ -5,6 +5,7 @@ from datetime import date
 
 COLORS = (
     ('black', 'black'),
+    ('white', 'white'),
     ('blue', 'blue'),
     ('red', 'red'),
     ('green', 'green'),
@@ -33,8 +34,8 @@ FACES = (
 class Meme(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     photo_URL = models.CharField(max_length=200, blank=True, null=True)
-    top_text = models.CharField(max_length=100, blank=True, null=True)
-    bottom_text = models.CharField(max_length=100, blank=True, null=True)
+    top_text = models.CharField(max_length=40, blank=True, null=True)
+    bottom_text = models.CharField(max_length=40, blank=True, null=True)
     created_on = models.DateField(default=date.today)
     text_color = models.CharField(
         max_length=5,
@@ -45,6 +46,11 @@ class Meme(models.Model):
         max_length=100,
         choices=FONTS,
         default=FONTS[0][0]
+    )
+    font_background_color = models.CharField(
+        max_length=100,
+        choices=COLORS,
+        default=COLORS[1][0],
     )
     face = models.CharField(
         max_length=100,
