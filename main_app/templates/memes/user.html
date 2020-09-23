@@ -26,13 +26,17 @@
         </div>
         <div class="gray-box" style="margin: 20px 0 10px 10px">
             <div>
-                <p style="text-align: center; margin: 5px 0 0">
-                    Created On: {{ meme.created_on }}
+                <p style="text-align: center; ">
+                    Created On: <br> {{ meme.created_on }}
                 </p>{% if meme.user == request.user %}
                 <nav style="margin-bottom: 5px">
                     <a href="{% url 'memes_update' meme.id %}">Edit</a>
                     <a href="{% url 'memes_delete' meme.id %}">Delete</a>
                 </nav>{% endif %}
+            </div>
+            <div class="like-box">
+                <p> {{meme.likes.all|length }}
+                    <a href="/memes/{{ meme.id }}/like"><i class="fa fa-thumbs-up" aria-hidden="true"></i></a></p>
             </div>
         </div>
     </div>

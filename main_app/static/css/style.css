@@ -138,7 +138,7 @@ a:hover {
   padding: 5px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   color: rgb(219, 213, 213);

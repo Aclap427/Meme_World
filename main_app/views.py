@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Meme
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
+from django.http import HttpResponseRedirect
 import uuid
 import boto3
 
@@ -97,15 +98,5 @@ def like(request, meme_id):
     meme = Meme.objects.get(id=meme_id)
     meme.likes.add(request.user.id)
     meme.save()
-    return redirect('/memes/')
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
-    # meme = Meme.objects.get(id=meme_id)
-    # liking_user = request.user
-    # print(meme.users_who_liked)
-    # if liking_user.id in meme.users_who_liked:
-    #   meme.likes = meme.likes - 1
-    # else:
-    #   meme.likes = meme.likes + 1
-    #   meme.users_who_liked.append(liking_user.id)
-    #   meme.save()
-    # return redirect('/memes/')
