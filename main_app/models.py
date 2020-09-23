@@ -19,14 +19,15 @@ FONTS = (
 FACES = (
     ('', ''),
     ('https://i.imgur.com/YN5GR31.png', 'Me Gusta'),
-    ('https://i.imgur.com/lS7NuWp.png', 'Troll'),
+    ('https://i.imgur.com/YOFpfXA.png', 'Troll Face'),
     ('https://i.imgur.com/TyBY8zX.png', 'Why U new'),
     ('https://i.imgur.com/zqWWfQu.png', 'Y U NO'),
-    ('https://i.imgur.com/RNafstk.png', 'LOL'),
-    ('https://i.imgur.com/dXAPOYu.png', 'Pepe'),
+    ('https://i.imgur.com/RNafstk.png', 'LOL Face'),
+    ('https://i.imgur.com/dXAPOYu.png', 'Pepe Frog'),
     ('https://i.imgur.com/0aRNUzu.png', 'Pepe Smug'),
-    ('https://i.imgur.com/zIqpk5B.png', 'Okay'),
-    ('https://i.imgur.com/jMktZhd.png', 'No')
+    ('https://i.imgur.com/Lw1iFG2.png', 'Okay Guy'),
+    ('https://i.imgur.com/FJ1S2YA.png', 'No Guy'),
+    ('https://i.imgur.com/jS8MkcK.png', 'FTS Guy')
 )
 
 class Meme(models.Model):
