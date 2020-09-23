@@ -72,7 +72,7 @@ a:hover {
     width: 300px;
     height: 300px;
     display: grid;
-    grid-template: 1fr 3fr 1fr / 1fr 1fr 1fr 1fr 1fr;
+    grid-template: 1fr 3fr 1fr / 15px 1fr 1fr 1fr 1fr 1fr;
 }
 
 .top,
@@ -99,21 +99,29 @@ a:hover {
 }
 
 .top {
-    grid-area: 1/1/2/6;
-}
-
-.photo {
+    grid-area: 1/1/2/7;
+    z-index: 7;
+  }
+  
+  .photo {
     border: 5px solid black;
     border-radius: 5px;
-    grid-area: 1/1/4/6;
+    grid-area: 1/1/4/7;
     z-index: 1;
     width: 100%;
     height: 100%;
     Box-shadow: 2px 5px 20px 1px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-}
-
-.bottom {
-    grid-area: 3/1/4/6;
+  }
+  
+  .face {
+    width: 100%;
+    z-index: 5;
+    grid-area: 3/2/4/4;
+  }
+  
+  .bottom {
+    grid-area: 3/1/4/7;
+    z-index: 7;
 }
 
 .gray-box {
@@ -176,6 +184,10 @@ a:hover {
 #id_font,
 #id_text_color {
     width: 153px;
+}
+
+#id_face {
+  width: 153px;
 }
 
 th {

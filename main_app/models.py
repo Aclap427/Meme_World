@@ -16,6 +16,18 @@ FONTS = (
     ("Impact, fantasy", "Impact, fantasy")
 )
 
+FACES = (
+    ('', ''),
+    ('https://i.imgur.com/YN5GR31.png', 'Me Gusta'),
+    ('https://i.imgur.com/lS7NuWp.png', 'Troll'),
+    ('https://i.imgur.com/TyBY8zX.png', 'Why U new'),
+    ('https://i.imgur.com/zqWWfQu.png', 'Y U NO'),
+    ('https://i.imgur.com/RNafstk.png', 'LOL'),
+    ('https://i.imgur.com/dXAPOYu.png', 'Pepe'),
+    ('https://i.imgur.com/0aRNUzu.png', 'Pepe Smug'),
+    ('https://i.imgur.com/zIqpk5B.png', 'Okay'),
+    ('https://i.imgur.com/jMktZhd.png', 'No')
+)
 
 class Meme(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -32,6 +44,12 @@ class Meme(models.Model):
         max_length=100,
         choices=FONTS,
         default=FONTS[0][0]
+    )
+    face = models.CharField(
+        max_length=100,
+        choices=FACES,
+        default='',
+        blank=True
     )
 
     def __str__(self):

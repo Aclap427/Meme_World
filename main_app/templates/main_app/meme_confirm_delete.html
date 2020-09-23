@@ -2,20 +2,26 @@
 <h1></h1>
 <div class="box" style="padding-bottom: 10px">
     <h1 style="margin: 10px 0 0;">Delete Meme?</h1>
-    <div class="meme" style="margin: 0 auto;">
-        {% if meme.top_text|length > 10 %}
-        <p class="top long-string">{{meme.top_text}}</p>
-        {% else %}
-        <p class="top short-string">{{meme.top_text}}</p>
-        {% endif %} {% if meme.photo_set.all|length > 0 %}
-        <img class="photo" src="{{ photo.url }}"> {% else %}
-        <img class="photo" src="{{meme.photo_URL}}" alt="pic" /> {% endif %}{% if meme.top_text|length > 10 %}
-        <p class="bottom long-string">{{meme.bottom_text}}</p>
-        {% else %}
-        <p class="bottom short-string">{{meme.bottom_text}}</p>
-        {% endif %}</div>
+        <div class="meme" style="margin: 0 auto;">
+          {% if meme.top_text == None %} {% elif meme.top_text|length > 10 %}
+          <p style="color: {{meme.text_color}}; font-family: {{meme.font}};" class="top long-string">{{meme.top_text}}</p>
+          {% else %}
+          <p style="color: {{meme.text_color}}; font-family: {{meme.font}};" class="top short-string">{{meme.top_text}}</p>
+          {% endif %}
+          <img class="photo" src="{{meme.photo_URL}}" alt="pic" />
+          {% if meme.bottom_text == None %}
+          {% elif meme.bottom_text|length > 10 %}
+          <p style="color: {{meme.text_color}}; font-family: {{meme.font}};" class="bottom long-string">{{meme.bottom_text}}</p>
+          {% else %}
+          <p style="color:{{meme.text_color}}; font-family:{{meme.font}};" class="bottom short-string">{{meme.bottom_text}}</p>
+          {% endif %}
+          {% if meme.face == '' %}
+          {% else %}
+          <img class="face" src="{{ meme.face }}" alt="">
+          {% endif %}
+        </div>
     <p style="margin: 5px;"></p>
-    <form class="gray-box" style="margin: 0 0 0 10px; padding: 10px;" action="" method="POST">
+    <form class="gray-box" style="margin: 10px 0 0 10px; padding: 10px;" action="" method="POST">
         {% csrf_token %}
         <a href="{% url 'user' %}" class="cancel-btn"></a>
         <input type="submit" value="" class="delete-btn" />

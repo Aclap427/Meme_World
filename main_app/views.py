@@ -48,7 +48,7 @@ def user_id(request, user_id):
 
 class MemeCreate(CreateView):
   model = Meme
-  fields = ['photo_URL', 'top_text', 'bottom_text', 'text_color', 'font']
+  fields = ['photo_URL', 'top_text', 'bottom_text', 'face', 'text_color', 'font']
   success_url = '/memes/'
 
   def form_valid(self, form):
