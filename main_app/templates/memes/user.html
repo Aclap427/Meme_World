@@ -1,4 +1,5 @@
 {% extends 'base.html' %} {% block content %}
+{% if memes|length >= 1 %}
 <h1>My Memes</h1>
 <div class="container">
     {% for meme in memes %}
@@ -37,4 +38,7 @@
     </div>
     {% endfor %}
 </div>
+{% else %}
+<h1 class="gray-box" style="padding: 20px;">You Have No Memes! &nbsp;&nbsp; <a href="{% url 'memes_create' %}">Create a Meme</a></h1>
+{% endif %}
 {% endblock %}
