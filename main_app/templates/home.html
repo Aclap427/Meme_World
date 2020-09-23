@@ -1,5 +1,24 @@
-{% extends 'base.html' %}
-{% block content %}
-<h1>Meme World</h1>
-<p>Welcome!</p>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <title>Home of MemeWorld</title>
+</head>
+
+<body>
+    <div class="homepage">
+        <p class="meme_word"> MEME</p>
+        <img src="https://i.imgur.com/3RZY6YJ.png?2">
+        <p class="meme_word">WORLD</p>
+    </div>
+    <div class="home_bottom">
+        <a href="{% url 'index' %}" style=color:black;>Memes</a> &nbsp; &nbsp; | &nbsp; &nbsp;
+        <a href="{% url 'login' %}" style=color:black;>Log In</a> &nbsp; &nbsp; | &nbsp; &nbsp;
+        <a href="{% url 'signup' %}" style=color:black;>Sign Up</a>
+    </div>
+</body>
+
+</html>

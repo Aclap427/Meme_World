@@ -12,7 +12,8 @@ COLORS = (
 
 FONTS = (
     ("Comic Neue", "Comic Neue"),
-    ("Just Another Hand", "Just Another Hand")
+    ("Just Another Hand", "Just Another Hand"),
+    ("Impact, fantasy", "Impact, fantasy")
 )
 
 
