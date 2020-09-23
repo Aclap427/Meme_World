@@ -183,10 +183,10 @@ th {
 }
 
 footer {
-    margin-top: 60px;
+    margin: 60px 0 0 0;
     flex-shrink: 0;
     text-align: center;
-    height: 200px;
+    height: 75px;
     /* background: linear-gradient(to top, white 0%, rgba(0, 0, 0, 0)); */
 }
 
