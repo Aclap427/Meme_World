@@ -71,7 +71,7 @@ class MemeCreate(CreateView):
 
 class MemeUpdate(LoginRequiredMixin, UpdateView):
   model = Meme
-  fields = ['top_text', 'bottom_text', 'text_color', 'font']
+  fields = ['top_text', 'bottom_text', 'face', 'text_color', 'font']
   success_url = '/memes/user/'
 
   def form_valid(self,form):
