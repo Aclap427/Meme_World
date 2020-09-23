@@ -2,6 +2,8 @@ from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
 from datetime import date
+from django.contrib.postgres.fields import ArrayField
+
 
 COLORS = (
     ('black', 'black'),
@@ -58,6 +60,10 @@ class Meme(models.Model):
         default='',
         blank=True
     )
+    likes = models.ManyToManyField(User, related_name='meme_likes')
 
     def __str__(self):
         return f"{self.top_text if self.top_text else ''}"
+
+    class Meta:
+        ordering = ['-id']

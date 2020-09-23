@@ -25,6 +25,10 @@
             <p>
                 Created By: <a href="/memes/user/{{meme.user.id}}">{{meme.user.username}}</a><br /> on {{ meme.created_on }}
             </p>
+            <div class="like-box">
+            <p> {{meme.likes.all|length }} 
+            <a href="/memes/{{ meme.id }}/like"><i class="fa fa-thumbs-up" aria-hidden="true"></i></a></p>
+            </div>
         </div>
     </div>
     {% endfor %}
