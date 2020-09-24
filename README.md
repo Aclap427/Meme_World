@@ -1,8 +1,11 @@
-# Meme World
+# MEME WORLD
+
+
 ![](https://i.imgur.com/4GDVUfA.png?1)
 
 
-With Meme World you can:
+#### With Meme World you can:
+
 - Create your own account to keep track of the memes you create
 - Load an image either by copying and pasting a link or downloading from your computer
 - Choose from our selection of **fonts, font colors** and **font background colors**
@@ -13,7 +16,8 @@ With Meme World you can:
 ---
 
 
-!(https://i.imgur.com/ANd5lE8.png?1)
+![](https://i.imgur.com/ANd5lE8.png?1)
+
 - HTML & CSS
 - Python
 - Django
@@ -38,7 +42,7 @@ With Meme World you can:
 ---
 
 
-!(https://i.imgur.com/FIQW2Xs.png?1)
+![](https://i.imgur.com/FIQW2Xs.png?1)
 
 - Add an ability to share on social media 
 - Add a download button
