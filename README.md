@@ -1,4 +1,7 @@
-# MEME WORLD
+# MEME WORLD 
+### Created By: Charles McMillan & Amanda Claproth 
+
+---
 
 
 ![](https://i.imgur.com/4GDVUfA.png?1)
