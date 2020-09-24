@@ -4,7 +4,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Meme
+from .models import Meme, User
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 import uuid
 import boto3
@@ -18,6 +18,12 @@ BUCKET = 'memeworld'
 def home(request):
     return render(request, 'home.html')
 
+def search(request):
+  try:
+    user = User.objects.get(username=str(request)[39:-2])
+    return redirect(f'/memes/user/{user.id}')
+  except:
+    return redirect('/memes/')
 
 @login_required
 def memes_index(request):

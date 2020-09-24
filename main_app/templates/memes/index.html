@@ -1,4 +1,9 @@
 {% extends 'base.html' %} {% block content %}
+<p>Search by Username</p>
+<form action="/user/search" method="GET">
+    <input type="search" placeholder="username" onClick="this.select();" name="search">
+    <input type="submit" value=""class="submit-btn">
+</form>
 <h1>Memes</h1>
 <div class="container">
     {% for meme in memes %}

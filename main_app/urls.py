@@ -11,4 +11,5 @@ urlpatterns = [
     path('memes/<int:pk>/delete', views.MemeDelete.as_view(), name='memes_delete'),
     path('memes/user/<int:user_id>/', views.user_id, name='user_id'),
     path('memes/<int:meme_id>/like', views.like, name='like'),
+    path('user/search', views.search, name='search'),
 ]
