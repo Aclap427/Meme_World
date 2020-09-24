@@ -1,5 +1,6 @@
 # Meme World
-!(https://i.imgur.com/4GDVUfA.png?1)
+![](https://i.imgur.com/4GDVUfA.png?1)
+
 
 With Meme World you can:
 - Create your own account to keep track of the memes you create
