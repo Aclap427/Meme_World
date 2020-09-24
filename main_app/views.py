@@ -54,13 +54,12 @@ def user_view(request):
     return render(request, 'memes/user.html', {'memes': memes})
 
 
-@login_required
 def user_id(request, user_id):
     memes = Meme.objects.filter(user=user_id)
     return render(request, 'memes/user.html', {'memes': memes})
 
 
-class MemeCreate(CreateView):
+class MemeCreate(LoginRequiredMixin, CreateView):
     model = Meme
     fields = ['photo_URL', 'top_text', 'bottom_text', 'face',
               'text_color', 'font', 'font_background_color']
@@ -98,11 +97,12 @@ class MemeUpdate(LoginRequiredMixin, UpdateView):
             return redirect('/memes/user/')
 
 
-class MemeDelete(DeleteView):
+class MemeDelete(LoginRequiredMixin, DeleteView):
     model = Meme
     success_url = '/memes/user/'
 
 
+@login_required
 def like(request, meme_id):
     meme = Meme.objects.get(id=meme_id)
     meme.likes.add(request.user.id)

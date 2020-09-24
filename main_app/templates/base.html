@@ -21,33 +21,36 @@
     <title>Meme World</title>
   </head>
 
-  <body class="body">
+  <body>
     <header>
-      <nav>
-        <div>
-          <p class="meme_words_top">MEME</p>
-          <a href="/">
-            <img
-              style="height: 100px; width: 100px"
-              src="https://i.imgur.com/3RZY6YJ.png?2"
-            />
-          </a>
-          <p class="meme_words_bottom">WORLD</p>
+      <div class="logo">
+        <p class="meme_words_top">MEME</p>&nbsp;&nbsp;
+        <a href="/">
+          <img
+            style="height: 100px; width: 100px"
+            src="https://i.imgur.com/3RZY6YJ.png?2"
+          />
+        </a>
+        &nbsp;&nbsp;<p class="meme_words_bottom">WORLD</p>
+      </div>
+      <div class="show">
+        <i class="fa fa-bars hide-btn" style="font-size: 50px;" aria-hidden="true"></i>
+          <nav class="hidden">
+          <a href="{% url 'index' %}">Explore</a>
+          {% if user.is_authenticated %}
+          <a href="{% url 'user' %}">My Memes</a>
+          <a href="{% url 'memes_create' %}">Create a Meme</a>
+          <a href="{% url 'logout' %}"
+            ><i class="fa fa-sign-out" aria-hidden="true"></i> -
+            {{user.username}}</a
+          >
+          {% else %}
+          <a href="{% url 'login' %}"
+            ><i class="fa fa-sign-in" aria-hidden="true"></i> - login</a
+          >
+          <a href="{% url 'signup' %}">Sign Up</a> {% endif %}
+        </nav>
         </div>
-        {% if user.is_authenticated %}
-        <a href="{% url 'index' %}">Memes</a>
-        <a href="{% url 'memes_create' %}">Create a Meme</a>
-        <a href="{% url 'user' %}">My Memes</a>
-        <a href="{% url 'logout' %}"
-          ><i class="fa fa-sign-out" aria-hidden="true"></i> -
-          {{user.username}}</a
-        >
-        {% else %}
-        <a href="{% url 'login' %}"
-          ><i class="fa fa-sign-in" aria-hidden="true"></i> - login</a
-        >
-        <a href="{% url 'signup' %}">Sign Up</a> {% endif %}
-      </nav>
     </header>
     <main>{% block content %} {% endblock %}</main>
     <footer>
