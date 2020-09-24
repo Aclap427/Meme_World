@@ -261,6 +261,14 @@ footer {
   color: #21456d;
 }
 
+.helptext {
+  font-size: 10px;
+}
+
+li {
+  list-style: none;
+}
+
 @media only screen and (max-width: 1095px) {
   .meme {
     height: 250px;
