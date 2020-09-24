@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block content %}
-<h1>{{ username }}'s Memes</h1>
+<h1><span style="color: #37cc57;">{{ username }}'s</span> Memes</h1>
 {% if memes|length >= 1 %}
 <div class="container">
     {% for meme in memes %}
