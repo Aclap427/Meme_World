@@ -21,6 +21,9 @@ def home(request):
 
 
 def search(request):
+    print(str(request)[39:-2])
+    if str(request)[39:-2] == 'do+a+barrel+roll':
+        return render(request, 'memes/barrelroll.html')
     try:
         user = User.objects.get(username=str(request)[39:-2])
         return redirect(f'/memes/user/{user.id}')
@@ -55,8 +58,9 @@ def user_view(request):
 
 
 def user_id(request, user_id):
+    user = User.objects.get(id=user_id).username
     memes = Meme.objects.filter(user=user_id)
-    return render(request, 'memes/user.html', {'memes': memes})
+    return render(request, 'memes/user.html', {'memes': memes, 'username': user})
 
 
 class MemeCreate(LoginRequiredMixin, CreateView):

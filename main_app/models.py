@@ -4,6 +4,9 @@ from django.contrib.auth.models import User
 from datetime import date
 from django.contrib.postgres.fields import ArrayField
 
+SIZE = (
+    ('10px', 10)
+)
 
 COLORS = (
     ('black', 'black'),
