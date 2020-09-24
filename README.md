@@ -27,6 +27,7 @@
 - Python
 - Django
 - PostgreSQL
+- AWS
 - Heroku
 
 
