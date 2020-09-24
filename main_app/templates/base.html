@@ -1,84 +1,116 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="shortcut icon" type="image/png" href="https://i.imgur.com/3RZY6YJ.png" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/style.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="https://i.imgur.com/3RZY6YJ.png"
+    />
     <title>Meme World</title>
-</head>
+  </head>
 
-<body>
+  <body class="body">
     <header>
-        <nav>
-            <a href="/">Home</a>
-            {% if user.is_authenticated %} 
-            <a href="{% url 'index' %}">Memes</a>
-            <a href="{% url 'memes_create' %}">Create a Meme</a>
-            <a href="{% url 'user' %}">My Memes</a>
-            <a href="{% url 'logout' %}">Log Out - {{user.username}}</a> 
-            {% else %}
-            <a href="{% url 'login' %}">Log In</a>
-            <a href="{% url 'signup' %}">Sign Up</a> {% endif %}
-        </nav>
+      <nav>
+        <div>
+          <p class="meme_words_top">MEME</p>
+          <a href="/">
+            <img
+              style="height: 100px; width: 100px"
+              src="https://i.imgur.com/3RZY6YJ.png?2"
+            />
+          </a>
+          <p class="meme_words_bottom">WORLD</p>
+        </div>
+        {% if user.is_authenticated %}
+        <a href="{% url 'index' %}">Memes</a>
+        <a href="{% url 'memes_create' %}">Create a Meme</a>
+        <a href="{% url 'user' %}">My Memes</a>
+        <a href="{% url 'logout' %}"
+          ><i class="fa fa-sign-out" aria-hidden="true"></i> -
+          {{user.username}}</a
+        >
+        {% else %}
+        <a href="{% url 'login' %}"
+          ><i class="fa fa-sign-in" aria-hidden="true"></i> - login</a
+        >
+        <a href="{% url 'signup' %}">Sign Up</a> {% endif %}
+      </nav>
     </header>
     <main>{% block content %} {% endblock %}</main>
     <footer>
+      <div>
         <p>Website Developed By:</p>
-        <h4>
-            Amanda Claproth
-            <a target="_blank" href="https://www.linkedin.com/in/amanda-claproth-8b90501b1/
-">
-          &nbsp;
-          <i
-            class="fa fa-linkedin-square"
-            style="font-size: 25px; color: rgb(0, 162, 255)"
-          ></i>
-        </a>
-            <a target="_blank" href="https://github.com/Aclap427">
-          &nbsp;
-          <i
-            class="fa fa-github"
-            style="font-size: 25px; color: rgb(0, 162, 255)"
+        <p>
+          Amanda Claproth
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/amanda-claproth-8b90501b1/
+"
           >
-          </i>
-        </a>
-            <a href="mailto:amanda.claproth@gmail.com">
-          &nbsp;
-          <i
-            class="fa fa-envelope"
-            style="font-size: 25px; color: rgb(0, 162, 255)"
+            &nbsp;
+            <i
+              class="fa fa-linkedin-square"
+              style="font-size: 25px; color: rgb(0, 162, 255)"
+            ></i>
+          </a>
+          <a target="_blank" href="https://github.com/Aclap427">
+            &nbsp;
+            <i
+              class="fa fa-github"
+              style="font-size: 25px; color: rgb(0, 162, 255)"
+            >
+            </i>
+          </a>
+          <a href="mailto:amanda.claproth@gmail.com">
+            &nbsp;
+            <i
+              class="fa fa-envelope"
+              style="font-size: 25px; color: rgb(0, 162, 255)"
+            >
+            </i>
+          </a>
+          &nbsp; | &nbsp; Charles MacMillan
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/charles-macmillan/"
           >
-          </i>
-        </a> &nbsp; | &nbsp; Charles MacMillan
-            <a target="_blank" href="https://www.linkedin.com/in/charles-macmillan/">
-          &nbsp;
-          <i
-            class="fa fa-linkedin-square"
-            style="font-size: 25px; color: rgb(0, 162, 255)"
-          ></i>
-        </a>
-            <a target="_blank" href="https://github.com/charlesmacmillan">
-          &nbsp;
-          <i
-            class="fa fa-github"
-            style="font-size: 25px; color: rgb(0, 162, 255)"
-          >
-          </i>
-        </a>
-            <a href="mailto:charlesmacmillanpro@gmail.com">
-          &nbsp;
-          <i
-            class="fa fa-envelope"
-            style="font-size: 25px; color: rgb(0, 162, 255)"
-          >
-          </i>
-        </a>
-        </h4>
+            &nbsp;
+            <i
+              class="fa fa-linkedin-square"
+              style="font-size: 25px; color: rgb(0, 162, 255)"
+            ></i>
+          </a>
+          <a target="_blank" href="https://github.com/charlesmacmillan">
+            &nbsp;
+            <i
+              class="fa fa-github"
+              style="font-size: 25px; color: rgb(0, 162, 255)"
+            >
+            </i>
+          </a>
+          <a href="mailto:charlesmacmillanpro@gmail.com">
+            &nbsp;
+            <i
+              class="fa fa-envelope"
+              style="font-size: 25px; color: rgb(0, 162, 255)"
+            >
+            </i>
+          </a>
+        </p>
+      </div>
     </footer>
-</body>
-
+  </body>
 </html>

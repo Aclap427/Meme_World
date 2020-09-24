@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 <h1></h1>
-<div class="box">
-    {% if object %}
+{% if object %}
+  <div class="box">
     <h1 style="margin: 10px 0 0;">Edit Meme</h1>
         <div class="meme" style="margin: 0 auto;">
           {% if meme.top_text == None %} {% elif meme.top_text|length > 10 %}
@@ -26,7 +26,7 @@
     <h1 style="margin: 10px 0 0 10px;">New Meme</h1>
     {% endif %}
 </div>
-<div></div>
+<!-- <div></div> -->
 <form class="gray-box" enctype="multipart/form-data" style="padding: 10px; margin-top: 10px;" action="" method="post">
     {% csrf_token %}
 

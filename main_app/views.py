@@ -16,14 +16,17 @@ BUCKET = 'memeworld'
 # Create your views here.
 
 def home(request):
+
     return render(request, 'home.html')
 
+
 def search(request):
-  try:
-    user = User.objects.get(username=str(request)[39:-2])
-    return redirect(f'/memes/user/{user.id}')
-  except:
-    return redirect('/memes/')
+    try:
+        user = User.objects.get(username=str(request)[39:-2])
+        return redirect(f'/memes/user/{user.id}')
+    except:
+        return redirect('/memes/')
+
 
 @login_required
 def memes_index(request):
@@ -104,4 +107,3 @@ def like(request, meme_id):
     meme.likes.add(request.user.id)
     meme.save()
     return redirect(request.META.get('HTTP_REFERER', '/memes/'))
-

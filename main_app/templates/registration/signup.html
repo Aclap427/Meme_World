@@ -1,14 +1,81 @@
-{% extends 'base.html' %}
-{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
 
-<h1>Sign Up</h1>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="shortcut icon" type="image/png" href="https://i.imgur.com/3RZY6YJ.png" />
+    <title>Meme World</title>
+</head>
 
-{% if error_message %}<p class="red-text">{{ error_message }}</p>{% endif %}
+<body>
 
-<form method="POST" action="{% url 'signup' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" class="btn" value="signup">
-</form>
+    <body>
+        <div class="homepage">
+            <p class="meme_word"> MEME</p>
+            <a href="/">
+                <img src="https://i.imgur.com/3RZY6YJ.png?2">
+            </a>
+            <p class="meme_word">WORLD</p>
+        </div>
+        </header>
+        <main>
+            <h1>Sign Up</h1>
+            <p>Already have an account?? - <a class="signup" href="{% url 'login' %}">Log In</a></p>
+            <div>
+                <form class="gray-box" method="POST" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <table>
+                        {{ form.as_table }}
+                    </table>
+                    <input type="submit" class="submit-btn" value="" />
+                    <input type="hidden" name="next" value="{{ next }}" />
+            </div>
+            </form>
+            </div>
+        </main>
+        <footer>
+            <p>Website Developed By:</p>
+            <h4>
+                Amanda Claproth
+                <a target="_blank" href="https://www.linkedin.com/in/amanda-claproth-8b90501b1/
+">
+                    &nbsp;
+                    <i class="fa fa-linkedin-square" style="font-size: 25px; color: rgb(0, 162, 255)"></i>
+                </a>
+                <a target="_blank" href="https://github.com/Aclap427">
+                    &nbsp;
+                    <i class="fa fa-github" style="font-size: 25px; color: rgb(0, 162, 255)">
+                    </i>
+                </a>
+                <a href="mailto:amanda.claproth@gmail.com">
+                    &nbsp;
+                    <i class="fa fa-envelope" style="font-size: 25px; color: rgb(0, 162, 255)">
+                    </i>
+                </a>
+                &nbsp; | &nbsp; Charles MacMillan
+                <a target="_blank" href="https://www.linkedin.com/in/charles-macmillan/">
+                    &nbsp;
+                    <i class="fa fa-linkedin-square" style="font-size: 25px; color: rgb(0, 162, 255)"></i>
+                </a>
+                <a target="_blank" href="https://github.com/charlesmacmillan">
+                    &nbsp;
+                    <i class="fa fa-github" style="font-size: 25px; color: rgb(0, 162, 255)">
+                    </i>
+                </a>
+                <a href="mailto:charlesmacmillanpro@gmail.com">
+                    &nbsp;
+                    <i class="fa fa-envelope" style="font-size: 25px; color: rgb(0, 162, 255)">
+                    </i>
+                </a>
+            </h4>
+        </footer>
+    </body>
 
-{% endblock %}
+</html>
+
+
+

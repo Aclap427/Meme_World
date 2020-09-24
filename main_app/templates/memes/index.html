@@ -1,11 +1,11 @@
 {% extends 'base.html' %} {% block content %}
-<form  class="gray-box" action="/user/search" method="GET">
+<h1>Memes</h1>
+
+<form  class="gray-box" style="margin-bottom: 25px;" action="/user/search" method="GET">
     <p>Search by Username: &nbsp; </p>
     <input type="search" placeholder="username" onClick="this.select();" name="search">
     <button type="submit" class="submit-btn"></button>
 </form>
-
-<h1>Memes</h1>
 
 <div class="container">
     {% for meme in memes %}
