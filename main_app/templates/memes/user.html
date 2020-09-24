@@ -29,7 +29,7 @@
                 <p style="text-align: center; ">
                     Created On: <br> {{ meme.created_on }}
                 </p>{% if meme.user == request.user %}
-                <nav style="margin-bottom: 5px">
+                <nav>
                     <a href="{% url 'memes_update' meme.id %}">Edit</a>
                     <a href="{% url 'memes_delete' meme.id %}">Delete</a>
                 </nav>{% endif %}

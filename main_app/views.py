@@ -28,7 +28,6 @@ def search(request):
         return redirect('/memes/')
 
 
-@login_required
 def memes_index(request):
     memes = Meme.objects.all()
     return render(request, 'memes/index.html', {'memes': memes})
@@ -49,11 +48,13 @@ def signup(request):
     return render(request, 'registration/signup.html', context)
 
 
+@login_required
 def user_view(request):
     memes = Meme.objects.filter(user=request.user)
     return render(request, 'memes/user.html', {'memes': memes})
 
 
+@login_required
 def user_id(request, user_id):
     memes = Meme.objects.filter(user=user_id)
     return render(request, 'memes/user.html', {'memes': memes})

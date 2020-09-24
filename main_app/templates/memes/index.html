@@ -1,8 +1,12 @@
 {% extends 'base.html' %} {% block content %}
-<h1>Memes</h1>
+<h1 style="margin-bottom: 15px;">Memes</h1>
 
 <form  class="gray-box" style="margin-bottom: 25px;" action="/user/search" method="GET">
-    <p>Search by Username: &nbsp; </p>
+    <div>
+      <p >Search by Username: &nbsp; </p>
+      <p style="font-size: x-small; text-align: left;">(Must match username perfectly)</p>
+    </div>
+    &nbsp;
     <input type="search" placeholder="username" onClick="this.select();" name="search">
     <button type="submit" class="submit-btn"></button>
 </form>
