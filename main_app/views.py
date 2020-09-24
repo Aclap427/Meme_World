@@ -43,7 +43,7 @@ def signup(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('index')
+            return redirect('home')
         else:
             error_message = 'Invalid sign up - try again'
     form = UserCreationForm()
@@ -53,8 +53,9 @@ def signup(request):
 
 @login_required
 def user_view(request):
+    user = request.user
     memes = Meme.objects.filter(user=request.user)
-    return render(request, 'memes/user.html', {'memes': memes})
+    return render(request, 'memes/user.html', {'memes': memes, 'username': user})
 
 
 def user_id(request, user_id):
@@ -67,7 +68,7 @@ class MemeCreate(LoginRequiredMixin, CreateView):
     model = Meme
     fields = ['photo_URL', 'top_text', 'bottom_text', 'face',
               'text_color', 'font', 'font_background_color']
-    success_url = '/memes/'
+    success_url = '/memes/user/'
 
     def form_valid(self, form):
         form.instance.user = self.request.user

@@ -32,6 +32,14 @@ main {
   align-items: center;
 }
 
+.container a {
+  color: black;
+}
+
+.box a {
+  color: #21456E;
+}
+
 nav {
   display: flex;
   align-items: center;
@@ -270,10 +278,6 @@ footer {
   color: green;
 }
 
-.home_nav {
-  color: black;
-}
-
 .logo {
   display: flex;
   align-items: center;
@@ -302,12 +306,12 @@ li {
   list-style: none;
 }
 
-@media only screen and (max-width: 1095px) {
+/* @media only screen and (max-width: 1095px) {
   .meme {
     height: 250px;
     width: 250px;
   }
-}
+} */
 
 @media only screen and (max-width: 750px) {
   header a {
