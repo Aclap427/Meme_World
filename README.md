@@ -14,6 +14,8 @@
 - Choose from our selection of **fonts, font colors** and **font background colors**
 - Add your favorite **meme face** instead of a bottom text for extra memeness!
 - Like your favorite memes and search for your favorite meme creators
+- Use mac shortcut **(Command-Shift-4)** to instantly drag outline around your meme and save it
+- On Windows you can use the built-in snipping tool
 
 
 ---
@@ -50,3 +52,9 @@
 - Add an ability to share on social media 
 - Add a download button
 - Add template options to display text in areas other than top and bottom
+
+
+---
+
+
+![](https://i.imgur.com/yd97ttH.png?1)
