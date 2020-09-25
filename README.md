@@ -37,6 +37,42 @@
 ## Screenshots
 
 
+![Home Page](https://i.imgur.com/9WDlGl1.png?1)
+
+
+Home Page
+
+![Nav](https://i.imgur.com/XJ6j8wv.png?1)
+
+
+Home Page Nav Bar 
+
+![SearchBar](https://i.imgur.com/3c6U8cV.png?1)
+
+
+Search Bar on index of memes so you can search for your favorite memester
+
+![Memes](https://i.imgur.com/jrZ4QVK.png?1)
+
+
+Meme index
+
+![UserPage](https://i.imgur.com/afTuXLd.png?1)
+
+
+Individual user memes 
+
+![New Meme](https://i.imgur.com/oknt54d.png?1)
+
+
+Create a new meme
+
+![Edit Meme](https://i.imgur.com/pJCEJOg.png?1)
+
+
+Edit your meme
+
+
 ---
 
 
