@@ -37,11 +37,27 @@
                 Created By: <a href="/memes/user/{{meme.user.id}}">{{meme.user.username}}</a><br /> on {{ meme.created_on }}
             </p>
             <div class="like-box">
-            <p> {{meme.likes.all|length }} 
-            <a href="/memes/{{ meme.id }}/like"><i class="fa fa-thumbs-up" aria-hidden="true"></i></a></p>
+                <p> {{meme.likes.all|length }} 
+                    <a href="/memes/{{ meme.id }}/like"><i class="fa fa-thumbs-up" aria-hidden="true"></i></a>
+                </p>
             </div>
         </div>
     </div>
     {% endfor %}
+    <div class="box" style="padding-top: 0;">
+        <div>
+            <img src="https://i.imgur.com/NvTQUwq.gif" alt="" class="photo" style="width: 300px; height: 300px; margin-left: 10px;"/>
+        </div>
+        <div class="gray-box" style="margin-left: 10px;">
+            <p style="margin: 0;">
+                Created By: <a href="http://localhost:8000/user/search?search=do+a+barrel+roll">Barrel Roll</a><br /> on Sept. 23, 2020
+            </p>
+            <div class="like-box">
+                <p> 101
+                    <a href="http://localhost:8000/user/search?search=do+a+barrel+roll"><i class="fa fa-thumbs-up" aria-hidden="true"></i></a>
+                </p>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

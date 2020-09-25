@@ -1,51 +1,109 @@
-{% extends 'base.html' %} {% block content %}
-<h1>My Memes</h1>
-<div class="container">
-    {% for meme in memes %}
-    <div class="box">
-        <div class="meme" style="margin: 0 auto;">
-            {% if meme.top_text == None %} {% elif meme.top_text|length > 10 %}
-            <p style="color: {{meme.text_color}}; font-family: {{meme.font}}; background-color: {{meme.font_background_color}};"
-                class="top long-string">{{meme.top_text}}</p>
-            {% else %}
-            <p style="color: {{meme.text_color}}; font-family: {{meme.font}}; background-color: {{meme.font_background_color}};"
-                class="top short-string">{{meme.top_text}}</p>
-            {% endif %}
-            <img class="photo" src="{{meme.photo_URL}}" alt="pic" />
-            {% if meme.bottom_text == None or meme.face != '' %}
-            {% elif meme.bottom_text|length > 10 %}
-            <p style="color: {{meme.text_color}}; font-family: {{meme.font}}; background-color: {{meme.font_background_color}};"
-                class="bottom long-string">{{meme.bottom_text}}
-            </p>
-            {% else %}
-            <p style="color:{{meme.text_color}}; font-family:{{meme.font}}; background-color: {{meme.font_background_color}};"
-                class="bottom short-string">{{meme.bottom_text}}
-            </p>
-            {% endif %}
-            {% if meme.face == '' %}
-            {% else %}
-            <img class="face" src="{{ meme.face }}" alt="">
-            {% endif %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="shortcut icon" type="image/png" href="https://i.imgur.com/3RZY6YJ.png" />
+    <title>Barrrel Roll</title>
+</head>
+
+<body class="roll-body">
+    <audio src="https://www.fesliyanstudios.com/play-mp3/7745" autoplay="autoplay"></audio>
+    <header>
+        <div class="logo">
+            <p class="meme_words_top">MEME</p>&nbsp;&nbsp;
+            <a href="/">
+                <img src="https://i.imgur.com/3RZY6YJ.png?2" />
+            </a>
+            &nbsp;&nbsp;<p class="meme_words_bottom">WORLD</p>
         </div>
-        <div class="gray-box" style="margin: 20px 0 10px 10px">
-            <div>
-                <p style="text-align: center; ">
-                    Created On: <br> {{ meme.created_on }}
-                </p>{% if meme.user == request.user %}
-                <nav>
-                    <a href="{% url 'memes_update' meme.id %}">Edit</a>
-                    <a href="{% url 'memes_delete' meme.id %}">Delete</a>
-                </nav>{% endif %}
-            </div>
-            <div class="like-box">
-                <p> {{meme.likes.all|length }}
-                    <a href="/memes/{{ meme.id }}/like"><i class="fa fa-thumbs-up" aria-hidden="true"></i></a></p>
-            </div>
+        <div class="show">
+            <i class="fa fa-bars hide-btn" style="font-size: 50px;" aria-hidden="true"></i>
+            <nav class="hidden">
+                <a href="{% url 'index' %}">Explore</a>
+                {% if user.is_authenticated %}
+                <a href="{% url 'user' %}">My Memes</a>
+                <a href="{% url 'memes_create' %}">Create a Meme</a>
+                <a href="{% url 'logout' %}"><i class="fa fa-sign-out" aria-hidden="true"></i> -
+                    {{user.username}}</a>
+                {% else %}
+                <a href="{% url 'login' %}"><i class="fa fa-sign-in" aria-hidden="true"></i> - login</a>
+                <a href="{% url 'signup' %}">Sign Up</a> {% endif %}
         </div>
-    </div>
-    {% endfor %}
-</div>
-{% else %}
-<h1 class="gray-box" style="padding: 20px;">No Memes to Show!</h1>
-{% endif %}
-{% endblock %}
+        </nav>
+    </header>
+    <main>
+        <h1>Woah, Nice Barrel Roll!</h1>
+        <p>Click a GIF to do another one!</p>
+        <div class="container">
+            <a class="home_nav" href="http://localhost:8000/user/search?search=do+a+barrel+roll">
+            <p style="font-size: 25px;"></p>
+            <div class="home box" style="padding-bottom: 20px">
+                <div class="meme">
+                    <img src="https://i.imgur.com/8N7mVMI.gif" alt="" class="photo" />
+                </div>
+            </div>
+        </a>
+        <a class="home_nav" href="http://localhost:8000/user/search?search=do+a+barrel+roll">
+            <p style="font-size: 25px;"></p>
+            <div class="home box" style="padding-bottom: 20px">
+                <div class="meme">
+                    <img src="https://i.imgur.com/inKaS3D.gif" alt="" class="photo" />
+                </div>
+            </div>
+        </a>
+        <a class="home_nav" href="http://localhost:8000/user/search?search=do+a+barrel+roll">
+            <p style="font-size: 25px;"></p>
+            <div class="home box" style="padding-bottom: 20px">
+                <div class="meme">
+                    <img src="https://i.imgur.com/mKvNld7.gif" alt="" class="photo" />
+                </div>
+            </div>
+        </a>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <p>Website Developed By:</p>
+            <p>
+                Amanda Claproth
+                <a target="_blank" href="https://www.linkedin.com/in/amanda-claproth-8b90501b1/
+">
+                    &nbsp;
+                    <i class="fa fa-linkedin-square" style="font-size: 25px; color: rgb(0, 162, 255)"></i>
+                </a>
+                <a target="_blank" href="https://github.com/Aclap427">
+                    &nbsp;
+                    <i class="fa fa-github" style="font-size: 25px; color: rgb(0, 162, 255)">
+                    </i>
+                </a>
+                <a href="mailto:amanda.claproth@gmail.com">
+                    &nbsp;
+                    <i class="fa fa-envelope" style="font-size: 25px; color: rgb(0, 162, 255)">
+                    </i>
+                </a>
+                &nbsp; | &nbsp; Charles MacMillan
+                <a target="_blank" href="https://www.linkedin.com/in/charles-macmillan/">
+                    &nbsp;
+                    <i class="fa fa-linkedin-square" style="font-size: 25px; color: rgb(0, 162, 255)"></i>
+                </a>
+                <a target="_blank" href="https://github.com/charlesmacmillan">
+                    &nbsp;
+                    <i class="fa fa-github" style="font-size: 25px; color: rgb(0, 162, 255)">
+                    </i>
+                </a>
+                <a href="mailto:charlesmacmillanpro@gmail.com">
+                    &nbsp;
+                    <i class="fa fa-envelope" style="font-size: 25px; color: rgb(0, 162, 255)">
+                    </i>
+                </a>
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>

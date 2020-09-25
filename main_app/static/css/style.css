@@ -2,6 +2,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Kufam:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap");
 
+@-webkit-keyframes roll {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes roll {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@keyframes roll {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 body {
   position: relative;
   min-height: 100vh;
@@ -11,6 +38,15 @@ body {
   margin: 0;
   background-color: rgb(33, 69, 110);
   font-family: "Kufam", cursive;
+}
+
+.roll-body {
+  -moz-animation-name: roll;
+  -moz-animation-duration: 4s;
+  -moz-animation-iteration-count: 1;
+  -webkit-animation-name: roll;
+  -webkit-animation-duration: 4s;
+  -webkit-animation-iteration-count: 1;
 }
 
 header {
@@ -37,7 +73,7 @@ main {
 }
 
 .box a {
-  color: #21456E;
+  color: #21456e;
 }
 
 nav {
@@ -303,16 +339,26 @@ footer {
   font-size: 10px;
 }
 
+.white-box {
+  width: 75%;
+  background-color: rgba(255, 255, 255, 0.479);
+  border: 2px solid gray;
+  border-radius: 5px;
+  box-shadow: 2px 5px 20px 1px rgba(0, 0, 0, 0.19),
+    0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.white-box li {
+  list-style: upper-roman;
+  padding-right: 30px;
+  text-align: left;
+  text-indent: 1%;
+  margin-bottom: 5px;
+}
+
 li {
   list-style: none;
 }
-
-/* @media only screen and (max-width: 1095px) {
-  .meme {
-    height: 250px;
-    width: 250px;
-  }
-} */
 
 @media only screen and (max-width: 750px) {
   header a {
@@ -323,6 +369,10 @@ li {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .gray-box {
+    width: 90vw;
   }
 
   .show:hover .hidden {

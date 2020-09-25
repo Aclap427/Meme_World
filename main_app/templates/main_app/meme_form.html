@@ -3,52 +3,58 @@
 {% if object %}
   <div class="box">
     <h1 style="margin: 10px 0 0;">Edit Meme</h1>
-        <div class="meme" style="margin: 0 auto;">
-          {% if meme.top_text == None %} {% elif meme.top_text|length > 10 %}
-          <p style="font-size: {{ meme.font_size }}; color: {{meme.text_color}}; font-family: {{meme.font}}; background-color: {{meme.font_background_color}};" class="top long-string">{{meme.top_text}}</p>
-          {% else %}
-          <p style="font-size: {{ meme.font_size }}; color: {{meme.text_color}}; font-family: {{meme.font}}; background-color: {{meme.font_background_color}};" class="top short-string">{{meme.top_text}}</p>
-          {% endif %}
-          <img class="photo" src="{{meme.photo_URL}}" alt="pic" />
-          {% if meme.bottom_text == None or meme.face != '' %}
-          {% elif meme.bottom_text|length > 10 %}
-          <p style="font-size: {{ meme.font_size }}; color: {{meme.text_color}}; font-family: {{meme.font}}; background-color: {{meme.font_background_color}};" class="bottom long-string">{{meme.bottom_text}}</p>
-          {% else %}
-          <p style="font-size: {{ meme.font_size }}; color:{{meme.text_color}}; font-family:{{meme.font}}; background-color: {{meme.font_background_color}};" class="bottom short-string">{{meme.bottom_text}}</p>
-          {% endif %}
-          {% if meme.face == '' %}
-          {% else %}
-          <img class="face" src="{{ meme.face }}" alt="">
-          {% endif %}
-        </div>
+      <div class="meme" style="margin: 0 auto;">
+        {% if meme.top_text == None %} {% elif meme.top_text|length > 10 %}
+        <p style="font-size: {{ meme.font_size }}; color: {{meme.text_color}}; font-family: {{meme.font}}; background-color: {{meme.font_background_color}};" class="top long-string">{{meme.top_text}}</p>
+        {% else %}
+        <p style="font-size: {{ meme.font_size }}; color: {{meme.text_color}}; font-family: {{meme.font}}; background-color: {{meme.font_background_color}};" class="top short-string">{{meme.top_text}}</p>
+        {% endif %}
+        <img class="photo" src="{{meme.photo_URL}}" alt="pic" />
+        {% if meme.bottom_text == None or meme.face != '' %}
+        {% elif meme.bottom_text|length > 10 %}
+        <p style="font-size: {{ meme.font_size }}; color: {{meme.text_color}}; font-family: {{meme.font}}; background-color: {{meme.font_background_color}};" class="bottom long-string">{{meme.bottom_text}}</p>
+        {% else %}
+        <p style="font-size: {{ meme.font_size }}; color:{{meme.text_color}}; font-family:{{meme.font}}; background-color: {{meme.font_background_color}};" class="bottom short-string">{{meme.bottom_text}}</p>
+        {% endif %}
+        {% if meme.face == '' %}
+        {% else %}
+        <img class="face" src="{{ meme.face }}" alt="">
+        {% endif %}
+      </div>
     <p style="margin: 10px;"></p>
-     {% else %}
+    {% else %}
     <h1 style="margin: 10px 0 0 10px;">New Meme</h1>
     {% endif %}
-</div>
-<!-- <div></div> -->
-<form class="gray-box" enctype="multipart/form-data" style="padding: 10px; margin-top: 10px;" action="" method="post">
-    {% csrf_token %}
-
+  </div>
+    <form class="gray-box" enctype="multipart/form-data" style="padding: 10px; margin-top: 10px;" action="" method="post">
+      {% csrf_token %}
       <table>
-    {% if object %}
-    {% else %}
-    <tr>
-      <thead>
-      <th style="margin-left: 45px;">Upload Photo: </th>
-      <td >
-        <input style=" width: 153px;" type="file" name="photo-file">
-      </td>
-    </tr>
-    <tr>
-
-      <th>-or-</th>
-    </tr>
-    {% endif %}
-      {{ form.as_table }}
-    </table>
-
-    <input type="submit" value="" class="submit-btn" />
-</form>
-
+        {% if object %}
+        {% else %}
+        <tr>
+          <thead>
+            <th style="margin-left: 45px;">Upload Photo: </th>
+            <td >
+              <input style=" width: 153px;" type="file" name="photo-file">
+            </td>
+          </tr>
+          <tr>
+            <th>-or-</th>
+          </tr>
+          {% endif %}
+          {{ form.as_table }}
+        </table>
+        
+        <input type="submit" value="" class="submit-btn" />
+      </form>    
+    <div class="white-box" style="margin-top: 20px;">
+      <h2>Tips For Becoming a Successful Memester:</h2>
+      <ul class="tips">
+        <li>Choose between uploading an image from your computer, OR copying and pasting the URL of an image from the internet</li>
+        <li>Choose between adding 'bottom text' OR a meme 'face'. The meme face will always be in the bottom left corner, and if selected, will override/remove any 'bottom text' you input.</li>
+        <li>When choosing a font size the larger font sizes work better on short one liners, and smaller font sizes work for more wordier memes. Think about meme real-estate </li>
+        <li>If you want to tweak your meme after submiting you can click on your username underneath your meme, or go to your 'My Memes' page and find the meme you want to change, then click 'Edit'.</li>
+        <li>Don't be lame. Just have fun with it</li>
+      </ul>
+    </div>
 {% endblock %}
