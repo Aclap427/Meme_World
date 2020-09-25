@@ -20,7 +20,6 @@ def home(request):
 
 
 def search(request):
-    print(str(request)[39:-2])
     if str(request)[39:-2] == 'do+a+barrel+roll':
         return render(request, 'memes/barrelroll.html')
     try:
