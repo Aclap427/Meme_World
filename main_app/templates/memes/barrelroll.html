@@ -1,51 +1,5 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+{% block content %}
 <h1>My Memes</h1>
-<div class="container">
-    {% for meme in memes %}
-    <div class="box">
-        <div class="meme" style="margin: 0 auto;">
-            {% if meme.top_text == None %} {% elif meme.top_text|length > 10 %}
-            <p style="color: {{meme.text_color}}; font-family: {{meme.font}}; background-color: {{meme.font_background_color}};"
-                class="top long-string">{{meme.top_text}}</p>
-            {% else %}
-            <p style="color: {{meme.text_color}}; font-family: {{meme.font}}; background-color: {{meme.font_background_color}};"
-                class="top short-string">{{meme.top_text}}</p>
-            {% endif %}
-            <img class="photo" src="{{meme.photo_URL}}" alt="pic" />
-            {% if meme.bottom_text == None or meme.face != '' %}
-            {% elif meme.bottom_text|length > 10 %}
-            <p style="color: {{meme.text_color}}; font-family: {{meme.font}}; background-color: {{meme.font_background_color}};"
-                class="bottom long-string">{{meme.bottom_text}}
-            </p>
-            {% else %}
-            <p style="color:{{meme.text_color}}; font-family:{{meme.font}}; background-color: {{meme.font_background_color}};"
-                class="bottom short-string">{{meme.bottom_text}}
-            </p>
-            {% endif %}
-            {% if meme.face == '' %}
-            {% else %}
-            <img class="face" src="{{ meme.face }}" alt="">
-            {% endif %}
-        </div>
-        <div class="gray-box" style="margin: 20px 0 10px 10px">
-            <div>
-                <p style="text-align: center; ">
-                    Created On: <br> {{ meme.created_on }}
-                </p>{% if meme.user == request.user %}
-                <nav>
-                    <a href="{% url 'memes_update' meme.id %}">Edit</a>
-                    <a href="{% url 'memes_delete' meme.id %}">Delete</a>
-                </nav>{% endif %}
-            </div>
-            <div class="like-box">
-                <p> {{meme.likes.all|length }}
-                    <a href="/memes/{{ meme.id }}/like"><i class="fa fa-thumbs-up" aria-hidden="true"></i></a></p>
-            </div>
-        </div>
-    </div>
-    {% endfor %}
-</div>
-{% else %}
-<h1 class="gray-box" style="padding: 20px;">No Memes to Show!</h1>
-{% endif %}
+
 {% endblock %}
