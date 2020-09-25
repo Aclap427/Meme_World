@@ -17,7 +17,7 @@
 - Use mac shortcut **(Command-Shift-4)** to crop and save your meme
 - *On Windows you can use the built-in snipping tool*
 
-**Just for fun, when you're on our site, scroll to the bottom of our index page of memes and click on the meme created by "Barrel Roll"
+**Just for fun, when you're on our site, scroll to the bottom of our index page of memes and click on the meme created by "Barrel Roll"**
 
 
 ---
