@@ -11,7 +11,7 @@
 
 - Create your own account to keep track of the memes you create
 - Load an image either by copying and pasting a link or downloading from your computer
-- Choose from our selection of **fonts, font colors** and **font background colors**
+- Choose from our selection of **fonts, font colors**, **font background colors** and more
 - Add your favorite **meme face** instead of a bottom text for extra memeness!
 - Like your favorite memes and search for your favorite meme creators
 - Use mac shortcut **(Command-Shift-4)** to crop and save your meme
