@@ -5,7 +5,13 @@ from datetime import date
 from django.contrib.postgres.fields import ArrayField
 
 SIZE = (
-    ('10px', 10)
+    ('14px', '14pt'),
+    ('16px', '16pt'),
+    ('18px', '18pt'),
+    ('20px', '20pt'),
+    ('22px', '22pt'),
+    ('24px', '24pt'),
+    ('26px', '26pt'),
 )
 
 COLORS = (
@@ -17,9 +23,14 @@ COLORS = (
 )
 
 FONTS = (
-    ("Comic Neue", "Comic Neue"),
-    ("Just Another Hand", "Just Another Hand"),
-    ("Impact, fantasy", "Impact, fantasy")
+    ("Comic Sans MS, Comic Sans, Cursive", "Comic Sans"),
+    ("Comic Neue", "Comic New"),
+    ("Just Another Hand", "Sharpie"),
+    ("Impact, fantasy", "Impact"),
+    ("Optima, sans-serif", "Optima"),
+    ("American Typewriter, serif", "Type-Writer"),
+    ("Luminari, fantasy", "Folklore"),
+    ("fantasy", "Folklore Two"),
 )
 
 FACES = (
@@ -35,6 +46,7 @@ FACES = (
     ('https://i.imgur.com/FJ1S2YA.png', 'No Guy'),
     ('https://i.imgur.com/jS8MkcK.png', 'FTS Guy')
 )
+
 
 class Meme(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -61,6 +73,12 @@ class Meme(models.Model):
         max_length=100,
         choices=FACES,
         default='',
+        blank=True
+    )
+    font_size = models.CharField(
+        max_length=5,
+        choices=SIZE,
+        default='20px',
         blank=True
     )
     likes = models.ManyToManyField(User, related_name='meme_likes')
