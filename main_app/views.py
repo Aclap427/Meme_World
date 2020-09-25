@@ -12,7 +12,6 @@ import boto3
 S3_BASE_URL = 'https://s3.us-west-1.amazonaws.com/'
 BUCKET = 'memeworld'
 
-
 # Create your views here.
 
 def home(request):
@@ -67,7 +66,7 @@ def user_id(request, user_id):
 class MemeCreate(LoginRequiredMixin, CreateView):
     model = Meme
     fields = ['photo_URL', 'top_text', 'bottom_text', 'face',
-              'text_color', 'font', 'font_background_color']
+              'text_color', 'font', 'font_size', 'font_background_color']
     success_url = '/memes/user/'
 
     def form_valid(self, form):
@@ -92,7 +91,7 @@ class MemeCreate(LoginRequiredMixin, CreateView):
 class MemeUpdate(LoginRequiredMixin, UpdateView):
     model = Meme
     fields = ['top_text', 'bottom_text', 'face',
-              'text_color', 'font', 'font_background_color']
+              'text_color', 'font', 'font_size', 'font_background_color']
     success_url = '/memes/user/'
 
     def form_valid(self, form):

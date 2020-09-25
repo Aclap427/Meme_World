@@ -140,9 +140,9 @@ a:hover {
   border-radius: 5px;
   margin: 5%;
   text-align: center;
-  padding: 8px 5px;
+  padding: 10px 5px 8px;
   z-index: 2;
-  line-height: 20px;
+  line-height: 25px;
   box-shadow: 2px 5px 20px 1px rgba(0, 0, 0, 0.19),
     0 6px 6px rgba(0, 0, 0, 0.23);
 }
@@ -244,7 +244,8 @@ a:hover {
 #id_face,
 #id_font,
 #id_text_color,
-#id_font_background_color {
+#id_font_background_color,
+#id_font_size {
   width: 153px;
 }
 
