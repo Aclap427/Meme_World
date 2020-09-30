@@ -20,6 +20,7 @@ COLORS = (
     ('blue', 'blue'),
     ('red', 'red'),
     ('green', 'green'),
+    ('yellow', 'yellow'),
 )
 
 FONTS = (
@@ -55,7 +56,7 @@ class Meme(models.Model):
     bottom_text = models.CharField(max_length=40, blank=True, null=True)
     created_on = models.DateField(default=date.today)
     text_color = models.CharField(
-        max_length=5,
+        max_length=15,
         choices=COLORS,
         default=COLORS[0][0]
     )
