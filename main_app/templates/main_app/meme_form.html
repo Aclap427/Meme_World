@@ -4,21 +4,16 @@
   <div class="box">
     <h1 style="margin: 10px 0 0;">Edit Meme</h1>
       <div class="meme" style="margin: 0 auto;">
-        {% if meme.top_text == None %} {% elif meme.top_text|length > 10 %}
-        <p style="font-size: {{ meme.font_size }}; color: {{meme.text_color}}; font-family: {{meme.font}}; background-color: {{meme.font_background_color}}; {% if meme.font_background_color != 'rgba(0, 0, 0, 0)' %} border: 1px solid grey; box-shadow: 2px 5px 20px 1px rgba(0, 0, 0, 0.19),
-    0 6px 6px rgba(0, 0, 0, 0.23); {% endif %} " class="top long-string">{{meme.top_text}}</p>
+        {% if meme.top_text == None %} 
         {% else %}
         <p style="font-size: {{ meme.font_size }}; color: {{meme.text_color}}; font-family: {{meme.font}}; background-color: {{meme.font_background_color}}; {% if meme.font_background_color != 'rgba(0, 0, 0, 0)' %} border: 1px solid grey; box-shadow: 2px 5px 20px 1px rgba(0, 0, 0, 0.19),
-    0 6px 6px rgba(0, 0, 0, 0.23); {% endif %} " class="top short-string">{{meme.top_text}}</p>
+    0 6px 6px rgba(0, 0, 0, 0.23); {% endif %} " class="top">{{meme.top_text}}</p>
         {% endif %}
         <img class="photo" src="{{meme.photo_URL}}" alt="pic" />
         {% if meme.bottom_text == None or meme.face != '' %}
-        {% elif meme.bottom_text|length > 10 %}
-        <p style="font-size: {{ meme.font_size }}; color: {{meme.text_color}}; font-family: {{meme.font}}; background-color: {{meme.font_background_color}}; {% if meme.font_background_color != 'rgba(0, 0, 0, 0)' %} border: 1px solid grey; box-shadow: 2px 5px 20px 1px rgba(0, 0, 0, 0.19),
-    0 6px 6px rgba(0, 0, 0, 0.23); {% endif %} " class="bottom long-string">{{meme.bottom_text}}</p>
         {% else %}
         <p style="font-size: {{ meme.font_size }}; color:{{meme.text_color}}; font-family:{{meme.font}}; background-color: {{meme.font_background_color}}; {% if meme.font_background_color != 'rgba(0, 0, 0, 0)' %} border: 1px solid grey; box-shadow: 2px 5px 20px 1px rgba(0, 0, 0, 0.19),
-    0 6px 6px rgba(0, 0, 0, 0.23); {% endif %} " class="bottom short-string">{{meme.bottom_text}}</p>
+    0 6px 6px rgba(0, 0, 0, 0.23); {% endif %} " class="bottom">{{meme.bottom_text}}</p>
         {% endif %}
         {% if meme.face == '' %}
         {% else %}
