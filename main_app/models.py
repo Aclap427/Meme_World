@@ -35,7 +35,7 @@ COLORS = (
 
 FONTS = (
     ("'villa', sans-serif", "Meme"),
-    ("'Comic Sans MS', 'Comic Sans', 'Cursive'", "Comic Sans"),
+    ("'Comic Sans MS', 'Comic Sans'", "Comic Sans"),
     ("Comic Neue", "Comic New"),
     ("Just Another Hand", "Sharpie"),
     ("'Impact', 'fantasy'", "Impact"),
