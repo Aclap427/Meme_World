@@ -63,8 +63,8 @@ FACES = (
 class Meme(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     photo_URL = models.CharField(max_length=200, blank=True, null=True)
-    top_text = models.CharField(max_length=40, blank=True, null=True)
-    bottom_text = models.CharField(max_length=40, blank=True, null=True)
+    top_text = models.CharField(max_length=75, blank=True, null=True)
+    bottom_text = models.CharField(max_length=75, blank=True, null=True)
     created_on = models.DateField(default=date.today)
     text_color = models.CharField(
         max_length=15,

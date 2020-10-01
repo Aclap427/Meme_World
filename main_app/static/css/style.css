@@ -171,7 +171,7 @@ a:hover {
   font-family: 'comic sans', sans-serif;
   background-color: white;
   border-radius: 5px;
-  margin: 5%;
+  margin: 10px 0 0 5%;
   text-align: center;
   padding: 10px 5px 8px;
   z-index: 2;
@@ -179,6 +179,7 @@ a:hover {
 }
 
 .top {
+  margin-top: 10px;
   grid-area: 1/1/2/7;
   z-index: 7;
 }
