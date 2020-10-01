@@ -14,22 +14,34 @@ SIZE = (
     ('26px', '26pt'),
 )
 
+BGCOLORS = (
+    ('rgba(0, 0, 0, 0)', 'clear'),
+    ('black', 'black'),
+    ('white', 'white'),
+    ('blue', 'blue'),
+    ('red', 'red'),
+    ('green', 'green'),
+    ('yellow', 'yellow'),
+)
+
 COLORS = (
     ('black', 'black'),
     ('white', 'white'),
     ('blue', 'blue'),
     ('red', 'red'),
     ('green', 'green'),
+    ('yellow', 'yellow'),
 )
 
 FONTS = (
-    ("Comic Sans MS, Comic Sans, Cursive", "Comic Sans"),
+    ("'villa', sans-serif", "Meme"),
+    ("'Comic Sans MS', 'Comic Sans', 'Cursive'", "Comic Sans"),
     ("Comic Neue", "Comic New"),
     ("Just Another Hand", "Sharpie"),
-    ("Impact, fantasy", "Impact"),
-    ("Optima, sans-serif", "Optima"),
-    ("American Typewriter, serif", "Type-Writer"),
-    ("Luminari, fantasy", "Folklore"),
+    ("'Impact', 'fantasy'", "Impact"),
+    ("'Optima', 'sans-serif'", "Optima"),
+    ("'American Typewriter', 'serif'", "Type-Writer"),
+    ("'Luminari', 'fantasy'", "Folklore"),
     ("fantasy", "Folklore Two"),
 )
 
@@ -55,7 +67,7 @@ class Meme(models.Model):
     bottom_text = models.CharField(max_length=40, blank=True, null=True)
     created_on = models.DateField(default=date.today)
     text_color = models.CharField(
-        max_length=5,
+        max_length=15,
         choices=COLORS,
         default=COLORS[0][0]
     )
@@ -66,8 +78,8 @@ class Meme(models.Model):
     )
     font_background_color = models.CharField(
         max_length=100,
-        choices=COLORS,
-        default=COLORS[1][0],
+        choices=BGCOLORS,
+        default=BGCOLORS[0][0],
     )
     face = models.CharField(
         max_length=100,
